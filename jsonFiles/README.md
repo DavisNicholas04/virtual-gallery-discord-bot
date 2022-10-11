@@ -1,5 +1,5 @@
 ### JSON file format:
-````
+````json
 {
     "history": [
         {
