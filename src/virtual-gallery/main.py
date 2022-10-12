@@ -1,10 +1,4 @@
-import re
 import os
-# import
-import discord
-from discord.ext import commands
-# from discord_slash import SlashContext, SlashCommand
-from time import sleep
 import interactions
 from dotenv import load_dotenv
 
