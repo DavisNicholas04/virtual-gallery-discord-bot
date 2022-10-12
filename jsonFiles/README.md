@@ -1,5 +1,5 @@
 ### JSON file format:
-```
+````json
 {
     "history": [
         {
@@ -29,5 +29,5 @@
             "genre":"string"
         },
     ]
-}```
-
+}
+````
