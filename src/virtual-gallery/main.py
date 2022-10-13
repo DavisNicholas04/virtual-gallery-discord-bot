@@ -1,7 +1,10 @@
 import os
+
+import discord
 import interactions
 from dotenv import load_dotenv
-
+from service.helper_service import gen_two_rand_recourses
+from controller.controller import get_resource_from_github
 
 load_dotenv()
 intent = interactions.Intents.DEFAULT
@@ -18,7 +21,7 @@ async def start(msg: interactions.ComponentContext):
                    "I'm behind you and won't wait for you to turn around before I swing my axe")
 
     await msg.send("Also, welcome to the interactive virtual reality experience. "
-                          "For a list of commands use the ``/help`` command")
+                   "For a list of commands use the ``/help`` command")
 
     options = interactions.SelectMenu(
         custom_id="genre_select",
@@ -42,6 +45,19 @@ async def select_menu_response(ctx: interactions.ComponentContext, selection):
     await ctx.send(f"You selected {selection[0]}. Great choice!")
 
     await ctx.send("you have a few options. Do any of these interest you?")
+    resources = gen_two_rand_recourses(selection[0])
+    for entity in resources:
+        await ctx.send(
+            f"""
+            Title: {entity['title']}
+            date:  {entity['date']}
+            description:  {entity['description']}
+            """,
+            files=interactions.File(
+                entity['title'],
+                fp=get_resource_from_github("image/anime", entity["cv_image"], False)
+            )
+        )
 
 
 client.start()

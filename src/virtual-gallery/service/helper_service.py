@@ -44,6 +44,9 @@ def get_images(genre, index):
     :rtype: str
     """
     return genre[index]['images']
+import random
+from ..controller.controller import get_resource_from_github
+from ..service.json_parser import MediaData
 
 
 def get_genre(genre, index):
@@ -67,3 +70,23 @@ def remove_body_tag_from_requests(response):
     :rtype: str
     """
     return str(response.content).removeprefix("b'").removesuffix("'")
+
+
+def gen_two_rand_recourses(selection):
+    full_json = get_resource_from_github("jsonFiles", "main_data.json")
+    mdo = MediaData.from_json(full_json)  # mdo = media data object
+    mdo_len = len(mdo.anime)
+    if selection == "history":
+        resource: [] = mdo.history[random.randrange(0, mdo_len)], \
+                       mdo.history[random.randrange(0, mdo_len)]
+        return resource
+    elif selection == "anime":
+        resource: [] = mdo.anime[random.randrange(0, mdo_len)], \
+                       mdo.anime[random.randrange(0, mdo_len)]
+        return resource
+    elif selection == "games":
+        resource: [] = mdo.games[random.randrange(0, mdo_len)], \
+                       mdo.games[random.randrange(0, mdo_len)]
+        return resource
+    else:
+        return None
