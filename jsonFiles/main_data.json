@@ -39,7 +39,8 @@
             "cv_image":"KSP.jpg",
             "images": [],
             "genre":"Space, Simulation, Physics"
-        }, {
+        },
+	    {
             "title":"Space Engine",
             "description":"SpaceEngine is 1:1 science-based Universe simulator, users can explore any part of our charted universe, along with procedurally generated parts that haven’t been charted yet. This game is fairly realistic with it’s physics and graphics, although you are able to surpass to speed of light by many times to explore places far out beyond our Milky Way.",
             "date":"Jun 11, 2019",
