@@ -1,0 +1,37 @@
+{
+    "history": [
+        {
+            "title":"string",
+            "description":"string",
+	        "date":"dateTime",
+            "images":"string <location of file in github>"
+	}
+    ],
+
+    "anime": [
+        {
+            "title":"Space Dandy",
+            "description":"Dandy is a groovy, pompadour-wearing man who explores the stars in search of strange aliens for money, desiring to visit his favorite place: bo****s, the best diner in all the cosmos. Traversing the galaxies in his trusty ship, the Aloha Oe, Dandy is accompanied by his two equally unique friends: QT, the vacuum cleaner robot, and Meow, an alien with a cat-like appearance.",
+            "release_date":"Jan 5, 2014",
+            "images":"spaceDandy.jpg",
+            "genre":"comedy, Sci-Fi"
+        },
+        {
+            "title":"Planetes",
+            "description":"In 2075, space travel is no longer just a dream, but an everyday reality for mankind. Advancements in science and technology have led to the colonization of the moon, the commercialization of outer space, and the formation of large space corporations. Ai Tanabe, an upbeat woman whose interests lie in the cosmos, joins Technora Corporation as a member of their Debris Section, a department dedicated to the removal of dangerous space junk between the orbits of the Earth and Moon",
+            "release_date":"Oct 4, 2003",
+            "images":"planetes.jpg",
+            "genre":"Drama, Romance, Sci-Fi"
+        }
+    ],
+
+    "game": [
+        {
+            "title":"string",
+            "description":"string",
+            "release_date":"dateTime",
+            "images":"string <location of file in github>",
+            "genre":"string"
+        }
+    ]
+}

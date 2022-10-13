@@ -42,4 +42,5 @@ async def select_menu_response(ctx: interactions.ComponentContext, selection):
     await ctx.send(f"You selected {selection[0]}. Great choice!")
 
     await ctx.send("you have a few options. do any of these interest you?")
+
 client.start()
