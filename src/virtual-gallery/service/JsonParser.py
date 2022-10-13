@@ -1,33 +1,22 @@
 import json
+import requests
 
 class MediaData:
-    def __init__(self, history):
-        self.node = history.node
-        self.title = self.node['title']
-        self.description = self.node['description']
-        self.date = self.node['node.date']
-        self.images = self.node['node.images']
+    def __init__(self, history, anime, games):
+        self.history = history
+        self.anime = anime
+        self.games = games
 
     @classmethod
     def from_json(cls, json_string):
+
         json_dict = json.loads(json_string)
         return cls(**json_dict)
 
-    def __repr__(self):
-        return f'<title: {self.title}>'
 
-json_string = '''{
-    "history": [
-        {
-            "node": {
-                "title":"string",
-                "description":"string",
-                "date":"dateTime",
-                "images":"string <location of file in github>"
-            }
-        }
-    ]
-}'''
+if __name__ == "__main__":
+    response = requests.get(
+        "https://api.myanimelist.net/v2/users/curiossity/animelist?status=completed", headers={"X-MAL-CLIENT-ID": "05238348537b2a8ebe3e1daf070dcce9"})
 
-data = MediaData.from_json(json_string)
-print(data)
+    data = MediaData.from_json(str(response.content).removeprefix("b'").removesuffix("'"))
+    print(data)
