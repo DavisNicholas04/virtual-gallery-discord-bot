@@ -7,7 +7,7 @@
             "description":"string",
 	    "date":"dateTime",
             "images":"string <location of file in github>"
-	},
+	}
     ],
 
     "anime": [
@@ -17,7 +17,7 @@
             "release_date":"dateTime",
             "images":"string <location of file in github>",
             "genre":"string"
-        },
+        }
     ],
 
     "game": [
@@ -27,7 +27,7 @@
             "release_date":"dateTime",
             "images":"string <location of file in github>",
             "genre":"string"
-        },
+        }
     ]
 }
 ````
