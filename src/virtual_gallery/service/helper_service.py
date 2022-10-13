@@ -1,3 +1,8 @@
+import random
+from src.virtual_gallery.controller.controller import get_resource_from_github
+from src.virtual_gallery.service.json_parser import MediaData
+
+
 def get_title(genre, index):
     """
     helper function to return the title of a resource
@@ -44,9 +49,6 @@ def get_images(genre, index):
     :rtype: str
     """
     return genre[index]['images']
-import random
-from ..controller.controller import get_resource_from_github
-from ..service.json_parser import MediaData
 
 
 def get_genre(genre, index):
@@ -75,18 +77,27 @@ def remove_body_tag_from_requests(response):
 def gen_two_rand_recourses(selection):
     full_json = get_resource_from_github("jsonFiles", "main_data.json")
     mdo = MediaData.from_json(full_json)  # mdo = media data object
-    mdo_len = len(mdo.anime)
+
     if selection == "history":
-        resource: [] = mdo.history[random.randrange(0, mdo_len)], \
-                       mdo.history[random.randrange(0, mdo_len)]
+        mdo_len = len(mdo.history)
+        index1 = random.randrange(0, mdo_len)
+        index2 = random.choice([i for i in range(0, mdo_len) if i not in [index1]])
+        resource: [] = mdo.history[index1], \
+                       mdo.history[index2]
         return resource
     elif selection == "anime":
-        resource: [] = mdo.anime[random.randrange(0, mdo_len)], \
-                       mdo.anime[random.randrange(0, mdo_len)]
+        mdo_len = len(mdo.anime)
+        index1 = random.randrange(0, mdo_len)
+        index2 = random.choice([i for i in range(0, mdo_len) if i not in [index1]])
+        resource: [] = mdo.anime[index1], \
+                       mdo.anime[index2]
         return resource
-    elif selection == "games":
-        resource: [] = mdo.games[random.randrange(0, mdo_len)], \
-                       mdo.games[random.randrange(0, mdo_len)]
+    elif selection == "game":
+        mdo_len = len(mdo.game)
+        index1 = random.randrange(0, mdo_len)
+        index2 = random.choice([i for i in range(0, mdo_len) if i not in [index1]])
+        resource: [] = mdo.games[index1], \
+                       mdo.games[index2]
         return resource
     else:
         return None

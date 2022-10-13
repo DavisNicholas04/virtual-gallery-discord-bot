@@ -11,14 +11,17 @@ def get_resource_from_github(folder, file, return_string=True):
     :param file: fileName that you wish to access from the json directory
     :return: string representation of a json object
     """
-    response = requests.get(f"{os.environ['GITHUB_ROOT_URL'] + folder + '/' + file}")
+    response = requests.get(f"{os.environ['RAW_GITHUB_ROOT_URL'] + folder + '/' + file}")
     if response.status_code == 200:
         print(response.content)
-        return response.content
+        if return_string:
+            val = str(response.content).removeprefix("b'").removesuffix("'").replace("\\n", "").replace("\\t", "")
+            return val
+        else:
+            val2 = response.content
+            return val2
     else:
         print(f"{response.status_code}: {response.content}")
-        if return_string:
-            return str(response.content).removeprefix("b'").removesuffix("'")
-        else:
-            return response.content
+        return str(response.content).removeprefix("b'").removesuffix("'")
+
 
