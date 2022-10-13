@@ -84,7 +84,7 @@ def get_two_recourses(selection):
     elif selection == "anime":
         resources = gen_two_rand_resources(mdo.anime)
         return resources
-    elif selection == "game":
+    elif selection == "games":
         resources = gen_two_rand_resources(mdo.game)
         return resources
     else:

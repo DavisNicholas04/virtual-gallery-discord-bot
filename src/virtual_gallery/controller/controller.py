@@ -15,7 +15,8 @@ def get_resource_from_github(folder, file, return_string=True):
     if response.status_code == 200:
         print(response.content)
         if return_string:
-            val = str(response.content).removeprefix("b'").removesuffix("'").replace("\\n", "").replace("\\t", "")
+            backslash = "\\"
+            val = str(response.content).removeprefix("b'").removesuffix("'").replace("\\n", "").replace("\\t", "").replace(backslash, "")
             return val
         else:
             val2 = response.content
