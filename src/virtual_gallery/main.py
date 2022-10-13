@@ -1,28 +1,24 @@
 import os
+import time
+
 import interactions
 from dotenv import load_dotenv
-from src.virtual_gallery.service.helper_service import gen_two_rand_recourses
+from src.virtual_gallery.service.helper_service import get_two_recourses
 from src.virtual_gallery.controller.controller import get_resource_from_github
 
 if __name__ == "__main__":
-
     load_dotenv()
     intent = interactions.Intents.DEFAULT
     client = interactions.Client(token=os.environ['DISCORD_TOKEN'], intents=intent)
-
 
     @client.command(
         name="start",
         description="start the interaction, which will tell the bot to message the user privately",
     )
     async def start(msg: interactions.ComponentContext):
-        await msg.send(f"starting virtual gallery with {msg.author.name} in private messages.\n"
-                       "If you're reading this it's already too late for you. "
-                       "I'm behind you and won't wait for you to turn around before I swing my axe")
-
-        await msg.send("Also, welcome to the interactive virtual reality experience. "
+        await msg.send("Welcome to the interactive virtual reality experience. "
                        "For a list of commands use the ``/help`` command")
-
+        time.sleep(2)
         options = interactions.SelectMenu(
             custom_id="genre_select",
             options=[
@@ -45,10 +41,12 @@ if __name__ == "__main__":
         await ctx.send(f"You selected {selection[0]}. Great choice!")
 
         await ctx.send("**you have a few options. Do any of these interest you?**")
-        resources = gen_two_rand_recourses(selection[0])
+        resources = get_two_recourses(selection[0])
         for entity in resources:
             await ctx.channel.send(
-                f"Title: {entity['title']}\nDate:  {entity['date']}\nDescription:  {' '.join(str(entity['description']).split()[:20])}. . .",
+                f"Title: {entity['title']}\n"
+                f"Date:  {entity['date']}\n"
+                f"Description:  {' '.join(str(entity['description']).split()[:20])}. . .",
                 files=interactions.File(
                     entity['cv_image'],
                     fp=get_resource_from_github(f"images/{selection[0]}", entity["cv_image"], False)

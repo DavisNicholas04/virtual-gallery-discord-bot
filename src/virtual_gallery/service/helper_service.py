@@ -74,30 +74,26 @@ def remove_body_tag_from_requests(response):
     return str(response.content).removeprefix("b'").removesuffix("'")
 
 
-def gen_two_rand_recourses(selection):
+def get_two_recourses(selection):
     full_json = get_resource_from_github("jsonFiles", "main_data.json")
     mdo = MediaData.from_json(full_json)  # mdo = media data object
 
     if selection == "history":
-        mdo_len = len(mdo.history)
-        index1 = random.randrange(0, mdo_len)
-        index2 = random.choice([i for i in range(0, mdo_len) if i not in [index1]])
-        resource: [] = mdo.history[index1], \
-                       mdo.history[index2]
-        return resource
+        resources = gen_two_rand_resources(mdo.history)
+        return resources
     elif selection == "anime":
-        mdo_len = len(mdo.anime)
-        index1 = random.randrange(0, mdo_len)
-        index2 = random.choice([i for i in range(0, mdo_len) if i not in [index1]])
-        resource: [] = mdo.anime[index1], \
-                       mdo.anime[index2]
-        return resource
+        resources = gen_two_rand_resources(mdo.anime)
+        return resources
     elif selection == "game":
-        mdo_len = len(mdo.game)
-        index1 = random.randrange(0, mdo_len)
-        index2 = random.choice([i for i in range(0, mdo_len) if i not in [index1]])
-        resource: [] = mdo.games[index1], \
-                       mdo.games[index2]
-        return resource
+        resources = gen_two_rand_resources(mdo.game)
+        return resources
     else:
         return None
+
+
+def gen_two_rand_resources(genre):
+    mdo_len = len(genre)
+    index1 = random.randrange(0, mdo_len)
+    index2 = random.choice([i for i in range(0, mdo_len) if i not in [index1]])
+    resources: [] = genre[index1], genre[index2]
+    return resources
