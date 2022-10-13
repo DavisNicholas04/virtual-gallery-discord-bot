@@ -1,7 +1,7 @@
 import random
 from src.virtual_gallery.controller.controller import get_resource_from_github
 from src.virtual_gallery.service.json_parser import MediaData
-
+import interactions
 
 def get_title(genre, index):
     """
@@ -97,3 +97,11 @@ def gen_two_rand_resources(genre):
     index2 = random.choice([i for i in range(0, mdo_len) if i not in [index1]])
     resources: [] = genre[index1], genre[index2]
     return resources
+
+
+def multi_component(custom_dict: dict, client: interactions.Client):
+    len(custom_dict)
+    myList = []
+    for val in custom_dict.values():
+        myList.append(client.component(val))
+
