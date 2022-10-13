@@ -54,3 +54,16 @@ def get_genre(genre, index):
     :rtype: str
     """
     return genre[index]['genre']
+
+
+def remove_body_tag_from_requests(response):
+    """
+    removes body tag caused by using the requests package (i.e. b'{JSON OBJ}' -> {JSON OBJ}).
+
+    Also converts byte response to a string.
+
+    :param response: api request response
+    :return: the json object with body tage from requests package removed. Also converted to a string
+    :rtype: str
+    """
+    return str(response.content).removeprefix("b'").removesuffix("'")

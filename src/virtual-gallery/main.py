@@ -1,7 +1,7 @@
 import os
 import interactions
 from dotenv import load_dotenv
-import requests
+
 
 load_dotenv()
 intent = interactions.Intents.DEFAULT
