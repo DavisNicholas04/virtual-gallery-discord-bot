@@ -26,7 +26,7 @@ if __name__ == "__main__":
             custom_id="genre_select",
             options=[
                 interactions.SelectOption(custom_id="custom_id_history", label="History",
-                                          value="value_History", decription="description_history"),
+                                          value="history", decription="description_history"),
 
                 interactions.SelectOption(custom_id="custom_id_anime", label="Anime",
                                           value="anime", decription="description_anime"),
@@ -42,7 +42,7 @@ if __name__ == "__main__":
     @client.component("genre_select")
     async def select_menu_response(ctx: interactions.ComponentContext, selection):
         await ctx.send(f"You selected {selection[0]}. Great choice!")
-
+        print(selection[0])
         await ctx.send("**you have a few options. select the one that interests you?**")
         resources = get_two_recourses(selection[0])
         i = 0
@@ -72,4 +72,4 @@ if __name__ == "__main__":
     #     for value in button_ids_dict.values():
     #         if str(value).startswith(ctx.author.id.)
     #
-    # client.start()
+    client.start()
