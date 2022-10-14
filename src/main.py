@@ -5,7 +5,7 @@ import interactions
 from dotenv import load_dotenv
 from src.service.helper_service import get_two_recourses
 from src.controller.controller import get_resource_from_github
-from src.service.helper_service import multi_component
+# from src.service.helper_service import multi_component
 
 button_ids_dict = {}
 
@@ -41,43 +41,58 @@ if __name__ == "__main__":
 
     @client.component("genre_select")
     async def select_menu_response(ctx: interactions.ComponentContext, selection):
+
         await ctx.send(f"You selected {selection[0]}. Great choice!")
-        print(selection[0])
-        await ctx.send("**you have a few options. select the one that interests you?**")
+        await ctx.send("**you have a few options. select the one that interests you __or__**")
         if selection[0] == "history":
             second_button_label = "Official Webpage"
         else:
             second_button_label = "Buy now!"
         resources = get_two_recourses(selection[0])
         i = 0
+        msgs: [interactions.Message]
         for entity in resources:
             i = i + 1
-            custom_id_interested = f"{ctx.author.id}.{entity['title']}.interested"
-            custom_id_buy_now = f"{ctx.author.id}.{entity['title']}.buyNow"
+            # custom_id_interested = f"{ctx.author.id}.{entity['title']}.interested"
+            # custom_id_buy_now = f"{ctx.author.id}.{entity['title']}.buyNow"
             button = interactions.Button(
-                style=interactions.ButtonStyle.PRIMARY,
-                custom_id=custom_id_interested,
-                label=f"I'm interested in {' '.join(entity['title'].split()[:15])}"
+                style=interactions.ButtonStyle.LINK,
+                label=f"I'm interested in {' '.join(entity['title'].split()[:15])}",
+                url="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
             )
             button2 = interactions.Button(
-                style=interactions.ButtonStyle.DANGER,
-                custom_id=custom_id_buy_now,
-                label=second_button_label
+                style=interactions.ButtonStyle.LINK,
+                label=second_button_label,
+                url="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
             )
-            button_ids_dict.update({ctx.author: custom_id_interested})
+            # button_ids_dict.update({ctx.author: custom_id_interested})
             await ctx.channel.send(
-                f"Title: {entity['title']}\n"
-                f"Date:  {entity['date']}\n"
-                f"Description:  {' '.join(str(entity['description']).split()[:20])}. . .",
-                files=interactions.File(
-                    entity['cv_image'],
-                    fp=get_resource_from_github(f"images/{selection[0]}", entity["cv_image"], False)
-                ),
-                components=[button, button2]
-            )
+                    f"Title: {entity['title']}\n"
+                    f"Date:  {entity['date']}\n"
+                    f"Description:  {' '.join(str(entity['description']).split()[:20])}. . .",
+                    files=interactions.File(
+                        entity['cv_image'],
+                        fp=get_resource_from_github(f"images/{selection[0]}", entity["cv_image"], False)
+                    ),
+                    components=[button, button2]
+                )
 
-    @multi_component(button_ids_dict, client)
-    async def resource_selection_response(ctx: interactions.ComponentContext, selection):
-        pass
+
+    # @multi_component(button_ids_dict, client)
+    # async def resource_selection_response(ctx: interactions.ComponentContext, selection):
+    #     pass
+    #
+    @client.component("interested")
+    @client.component("buyOrGoto")
+    async def resource_selection_response(ctx: interactions.ComponentContext):
+        sq = "'"
+        if ctx.data.custom_id.startswith("I'm interested in"):
+            prefix = "I'm interested in'"
+            await ctx.send(f"oh wow, you're interested knowing more about {ctx.data.custom_id.removeprefix(prefix)}! that's a really good choice.")
+        else:
+            await ctx.send(f"oh wow, you're interested in <buying or going> to <selection>! that's a really good choice.")
+        time.sleep(.5)
+        await ctx.send(f"redirecting you to **<website name>**")
+
 
     client.start()
