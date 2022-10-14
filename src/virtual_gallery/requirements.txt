@@ -1,4 +1,4 @@
 python-dotenv~=0.21.0
 requests~=2.26.0
 setuptools~=58.0.4
-interactions
+discord-py-interactions
