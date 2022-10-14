@@ -48,8 +48,8 @@ if __name__ == "__main__":
         i = 0
         for entity in resources:
             i = i + 1
-            custom_id_interested = f"{ctx.author.id}.{entity['title']}"
-            custom_id_buy_now = f"{ctx.author.id}.{entity['title']}"
+            custom_id_interested = f"{ctx.author.id}.{entity['title']}.interested"
+            custom_id_buy_now = f"{ctx.author.id}.{entity['title']}.buyNow"
             button = interactions.Button(
                 style=interactions.ButtonStyle.PRIMARY,
                 custom_id=custom_id_interested,
