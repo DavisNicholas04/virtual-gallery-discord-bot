@@ -48,13 +48,19 @@ if __name__ == "__main__":
         i = 0
         for entity in resources:
             i = i + 1
-            custom_id = f"{ctx.author.id}.{entity['title']}"
+            custom_id_interested = f"{ctx.author.id}.{entity['title']}"
+            custom_id_buy_now = f"{ctx.author.id}.{entity['title']}"
             button = interactions.Button(
                 style=interactions.ButtonStyle.PRIMARY,
-                custom_id=custom_id,
-                label=f"I'm interested in {entity['title']}"
+                custom_id=custom_id_interested,
+                label=f"I'm interested in {' '.join(entity['title'].split()[:15])}"
             )
-            button_ids_dict.update({ctx.author:custom_id})
+            button2 = interactions.Button(
+                style=interactions.ButtonStyle.DANGER,
+                custom_id=custom_id_buy_now,
+                label="Buy now!"
+            )
+            button_ids_dict.update({ctx.author:custom_id_interested})
             await ctx.channel.send(
                 f"Title: {entity['title']}\n"
                 f"Date:  {entity['date']}\n"
@@ -63,7 +69,7 @@ if __name__ == "__main__":
                     entity['cv_image'],
                     fp=get_resource_from_github(f"images/{selection[0]}", entity["cv_image"], False)
                 ),
-                components=button
+                components=[button, button2]
             )
 
     # @multi_component(button_ids_dict, client)
