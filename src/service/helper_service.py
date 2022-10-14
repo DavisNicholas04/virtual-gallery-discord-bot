@@ -1,6 +1,6 @@
 import random
-from src.virtual_gallery.controller.controller import get_resource_from_github
-from src.virtual_gallery.service.json_parser import MediaData
+from src.controller.controller import get_resource_from_github
+from src.service.json_parser import MediaData
 import interactions
 
 def get_title(genre, index):
