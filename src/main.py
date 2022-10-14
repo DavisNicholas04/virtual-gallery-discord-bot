@@ -78,8 +78,6 @@ if __name__ == "__main__":
 
     @multi_component(button_ids_dict, client)
     async def resource_selection_response(ctx: interactions.ComponentContext, selection):
-        await ctx.send(f"oh wow, you're interested in {selection}, that's a really good choice")
-        # for value in button_ids_dict.values():
-        #     if str(value).startswith(ctx.author.id.)
+        pass
 
     client.start()
