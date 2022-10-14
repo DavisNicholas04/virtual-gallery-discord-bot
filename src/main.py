@@ -5,7 +5,7 @@ import interactions
 from dotenv import load_dotenv
 from src.service.helper_service import get_two_recourses
 from src.controller.controller import get_resource_from_github
-# from src.service.helper_service import multi_component
+from src.service.helper_service import multi_component
 
 button_ids_dict = {}
 
@@ -64,7 +64,7 @@ if __name__ == "__main__":
                 custom_id=custom_id_buy_now,
                 label=second_button_label
             )
-            button_ids_dict.update({ctx.author:custom_id_interested})
+            button_ids_dict.update({ctx.author: custom_id_interested})
             await ctx.channel.send(
                 f"Title: {entity['title']}\n"
                 f"Date:  {entity['date']}\n"
@@ -76,10 +76,10 @@ if __name__ == "__main__":
                 components=[button, button2]
             )
 
-    # @multi_component(button_ids_dict, client)
-    # async def resource_selection_response(ctx: interactions.ComponentContext, selection):
-    #     await ctx.send(f"oh wow, you're interested in {selection}, that's a really good choice")
-    #     for value in button_ids_dict.values():
-    #         if str(value).startswith(ctx.author.id.)
-    #
+    @multi_component(button_ids_dict, client)
+    async def resource_selection_response(ctx: interactions.ComponentContext, selection):
+        await ctx.send(f"oh wow, you're interested in {selection}, that's a really good choice")
+        # for value in button_ids_dict.values():
+        #     if str(value).startswith(ctx.author.id.)
+
     client.start()

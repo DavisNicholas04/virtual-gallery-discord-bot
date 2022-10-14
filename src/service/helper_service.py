@@ -104,4 +104,3 @@ def multi_component(custom_dict: dict, client: interactions.Client):
     myList = []
     for val in custom_dict.values():
         myList.append(client.component(val))
-
