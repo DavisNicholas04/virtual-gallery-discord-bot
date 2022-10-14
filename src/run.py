@@ -5,7 +5,7 @@ import interactions
 from dotenv import load_dotenv
 from src.service.helper_service import get_two_recourses
 from src.controller.controller import get_resource_from_github
-from src.service.helper_service import multi_component
+# from src.service.helper_service import multi_component
 
 button_ids_dict = {}
 
