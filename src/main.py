@@ -21,7 +21,7 @@ if __name__ == "__main__":
     async def start(msg: interactions.ComponentContext):
         await msg.send("Welcome to the interactive virtual reality experience. "
                        "For a list of commands use the ``/help`` command")
-        time.sleep(2)
+        time.sleep(1)
         options = interactions.SelectMenu(
             custom_id="genre_select",
             options=[
@@ -44,6 +44,10 @@ if __name__ == "__main__":
         await ctx.send(f"You selected {selection[0]}. Great choice!")
         print(selection[0])
         await ctx.send("**you have a few options. select the one that interests you?**")
+        if selection[0] == "history":
+            second_button_label = "Official Webpage"
+        else:
+            second_button_label = "Buy now!"
         resources = get_two_recourses(selection[0])
         i = 0
         for entity in resources:
@@ -58,7 +62,7 @@ if __name__ == "__main__":
             button2 = interactions.Button(
                 style=interactions.ButtonStyle.DANGER,
                 custom_id=custom_id_buy_now,
-                label="Buy now!"
+                label=second_button_label
             )
             button_ids_dict.update({ctx.author:custom_id_interested})
             await ctx.channel.send(
