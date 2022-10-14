@@ -1,1 +1,1 @@
-worker: python main.py
+worker: python src/virtual_gallery/main.py
