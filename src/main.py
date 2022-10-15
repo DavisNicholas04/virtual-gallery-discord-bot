@@ -19,7 +19,7 @@ if __name__ == "__main__":
         description="start the interaction, which will tell the bot to message the user privately",
     )
     async def start(msg: interactions.ComponentContext):
-        await msg.send("Welcome to the interactive virtual reality experience. "
+        await msg.send("Welcome to the interactive virtual gallery experience. "
                        "For a list of commands use the ``/help`` command")
         time.sleep(1)
         options = interactions.SelectMenu(
