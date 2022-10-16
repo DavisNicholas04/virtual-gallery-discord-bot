@@ -21,7 +21,7 @@ if __name__ == "__main__":
     async def start(msg: interactions.ComponentContext):
         website_button = interactions.Button(
             style=interactions.ButtonStyle.LINK,
-            label="go to the website",
+            label="go to website",
             url="https://cs.oswego.edu/~acascen/coursework/Virtual%20Gallery.HTML"
         )
         await msg.send("Welcome to the interactive virtual gallery experience. "
