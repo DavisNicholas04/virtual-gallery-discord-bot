@@ -19,8 +19,14 @@ if __name__ == "__main__":
         description="start the interaction, which will tell the bot to message the user privately",
     )
     async def start(msg: interactions.ComponentContext):
+        website_button = interactions.Button(
+            style=interactions.ButtonStyle.LINK,
+            label="go to the website",
+            url="https://cs.oswego.edu/~acascen/coursework/Virtual%20Gallery.HTML"
+        )
         await msg.send("Welcome to the interactive virtual gallery experience. "
-                       "For a list of commands use the ``/help`` command")
+                       "For a list of commands use the ``/help`` command.\n"
+                       "You can also go straight to our website here.", components=website_button)
         time.sleep(1)
         options = interactions.SelectMenu(
             custom_id="genre_select",
@@ -36,7 +42,7 @@ if __name__ == "__main__":
 
             placeholder="Choose your experience",
         )
-        await msg.send(content="choose your genre", components=options)
+        await msg.send(content="select on of the following options", components=options)
 
 
     @client.component("genre_select")
