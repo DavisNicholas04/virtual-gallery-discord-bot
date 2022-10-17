@@ -5,14 +5,16 @@ import interactions
 from dotenv import load_dotenv
 from src.service.helper_service import get_two_recourses
 from src.controller.controller import get_resource_from_github
+
 # from src.service.helper_service import multi_component
 
-button_ids_dict = {}
+reroll_button_ids_dict = {}
 
 if __name__ == "__main__":
     load_dotenv()
     intent = interactions.Intents.DEFAULT
     client = interactions.Client(token=os.environ['DISCORD_TOKEN'], intents=intent)
+
 
     @client.command(
         name="start",
@@ -47,21 +49,30 @@ if __name__ == "__main__":
 
     @client.component("genre_select")
     async def select_menu_response(ctx: interactions.ComponentContext, selection):
+        reroll_button = interactions.Button(
+            style=interactions.ButtonStyle.PRIMARY,
+            label="reroll",
+            custom_id="reroll"
+        )
+        d = await ctx.send(f"You selected {selection[0]}. Great choice!")
+        await ctx.send("**you have a few options. select the one that interests you __or__**", components=reroll_button)
+        await roll(ctx, selection)
 
-        await ctx.send(f"You selected {selection[0]}. Great choice!")
-        await ctx.send("**you have a few options. select the one that interests you __or__**")
+
+    async def roll(ctx: interactions.ComponentContext, selection):
         if selection[0] == "history":
             second_button_label = "Official Webpage"
         else:
             second_button_label = "Buy now!"
         resources = get_two_recourses(selection[0])
+        reroll_button_ids_dict[f"{ctx.user}-selection"] = selection
         i = 0
         msgs: [interactions.Message]
         for entity in resources:
             i = i + 1
             button = interactions.Button(
                 style=interactions.ButtonStyle.LINK,
-                label=f"I'm interested in {' '.join(entity['title'].split()[:15])}",
+                label=f"I'm interested in {entity['title'].split()[:15]}",
                 url=' '.join(entity['title'].split()[:15])
             )
             button2 = interactions.Button(
@@ -69,7 +80,8 @@ if __name__ == "__main__":
                 label=second_button_label,
                 url=entity["official_link"]
             )
-            await ctx.channel.send(
+            reroll_button_ids_dict[f"{ctx.user}-{i}"] = \
+                await ctx.channel.send(
                     f"Title: {entity['title']}\n"
                     f"Date:  {entity['date']}\n"
                     f"Description:  {' '.join(str(entity['description']).split()[:20])}. . .",
@@ -79,5 +91,16 @@ if __name__ == "__main__":
                     ),
                     components=[button, button2]
                 )
+
+
+    @client.component("reroll")
+    async def reroll(ctx: interactions.ComponentContext):
+        reroll_button_ids_dict.get(f"{ctx.user}-{1}").delete()
+        reroll_button_ids_dict.get(f"{ctx.user}-{2}").delete()
+        selection = reroll_button_ids_dict.get(f"{ctx.user}-selection")
+        await roll(ctx, selection)
+
+        reroll_button_ids_dict.pop(f"{ctx.user}-selection")
+
 
     client.start()
