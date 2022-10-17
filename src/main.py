@@ -59,8 +59,6 @@ if __name__ == "__main__":
         msgs: [interactions.Message]
         for entity in resources:
             i = i + 1
-            # custom_id_interested = f"{ctx.author.id}.{entity['title']}.interested"
-            # custom_id_buy_now = f"{ctx.author.id}.{entity['title']}.buyNow"
             button = interactions.Button(
                 style=interactions.ButtonStyle.LINK,
                 label=f"I'm interested in {' '.join(entity['title'].split()[:15])}",
@@ -71,7 +69,6 @@ if __name__ == "__main__":
                 label=second_button_label,
                 url="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
             )
-            # button_ids_dict.update({ctx.author: custom_id_interested})
             await ctx.channel.send(
                     f"Title: {entity['title']}\n"
                     f"Date:  {entity['date']}\n"
@@ -82,23 +79,5 @@ if __name__ == "__main__":
                     ),
                     components=[button, button2]
                 )
-
-
-    # @multi_component(button_ids_dict, client)
-    # async def resource_selection_response(ctx: interactions.ComponentContext, selection):
-    #     pass
-    #
-    @client.component("interested")
-    @client.component("buyOrGoto")
-    async def resource_selection_response(ctx: interactions.ComponentContext):
-        sq = "'"
-        if ctx.data.custom_id.startswith("I'm interested in"):
-            prefix = "I'm interested in'"
-            await ctx.send(f"oh wow, you're interested knowing more about {ctx.data.custom_id.removeprefix(prefix)}! that's a really good choice.")
-        else:
-            await ctx.send(f"oh wow, you're interested in <buying or going> to <selection>! that's a really good choice.")
-        time.sleep(.5)
-        await ctx.send(f"redirecting you to **<website name>**")
-
 
     client.start()
