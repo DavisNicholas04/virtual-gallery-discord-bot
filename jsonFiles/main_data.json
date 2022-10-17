@@ -9,7 +9,8 @@
             "description":"string",
             "date":"dateTime",
             "cv_image":"string<location of file in github>",
-            "images":[]
+            "images":[],
+            "official_link": ""
         }
     ],
     "anime": [
@@ -19,7 +20,9 @@
             "date":"Jan 5, 2014",
             "cv_image":"spaceDandy.jpg",
             "images": [],
-            "genre":"comedy, Sci-Fi"
+            "genre":"comedy, Sci-Fi",
+            "official_link": ""
+
         },
         {
             "title":"Planetes",
@@ -27,7 +30,9 @@
             "date":"Oct 4, 2003",
             "cv_image":"planetes.jpg",
             "images": [],
-            "genre":"Drama, Romance, Sci-Fi"
+            "genre":"Drama, Romance, Sci-Fi",
+             "official_link": ""
+
         },
 	{
 	    "title":"Kanata no Astra",
@@ -35,7 +40,9 @@
             "date":"Jul 3, 2019",
             "cv_image":"Astra Lost in Space.jpg",
             "images":[],
-            "genre":"Adventure, Mystery, Sci-Fi"
+            "genre":"Adventure, Mystery, Sci-Fi",
+            "official_link": ""
+
         },
         {
 	    "title":"Cowboy Bebop",
@@ -43,7 +50,9 @@
             "date":"Apr 3, 1998",
             "cv_image":"Cowboy Bebop.jpg",
             "images":[],
-            "genre":" Action, Sci-Fi"
+            "genre":" Action, Sci-Fi",
+            "official_link": ""
+
          },
          {
 	    "title":"Sidonia no Kishi",
@@ -51,7 +60,9 @@
             "date":"Apr 11, 2014",
             "cv_image":"Sidonia no Kishi.jpg",
             "images":[],
-            "genre":"Action, Sci-Fi"
+            "genre":"Action, Sci-Fi",
+             "official_link": ""
+
          },
          {
 	    "title":"Kakumeiki Valvrave",
@@ -59,7 +70,9 @@
             "date":"Apr 12, 2013",
             "cv_image":"Kakumeiki Valvrave.jpg",
             "images":[],
-            "genre":" Action, Sci-Fi"
+            "genre":" Action, Sci-Fi",
+             "official_link": ""
+
          }
     ],
     "game": [
@@ -69,7 +82,9 @@
             "date":"Apr 27, 2015",
             "cv_image":"KSP.jpg",
             "images": [],
-            "genre":"Space, Simulation, Physics"
+            "genre":"Space, Simulation, Physics",
+            "official_link": ""
+
         },
 	    {
             "title":"Space Engine",
@@ -77,7 +92,9 @@
             "date":"Jun 11, 2019",
             "cv_image":"SE.jpg",
             "images": [],
-            "genre":"Space, Sandbox, Casual"
+            "genre":"Space, Sandbox, Casual",
+             "official_link": ""
+
         },
         {
             "title":"Terra Invicta",
@@ -85,7 +102,9 @@
             "date":"Sep 26, 2022",
             "cv_image":"TI.jpg",
             "images": [],
-            "genre":"Strategy, Space, Simulation"
+            "genre":"Strategy, Space, Simulation",
+             "official_link": ""
+
         },
         {
             "title":"Hardspace: Shipbreaker",
@@ -93,7 +112,9 @@
             "date":"May 24, 2022",
             "cv_image":"HS.jpg",
             "images": [],
-            "genre":"Space, Sci-fi, Physics"
+            "genre":"Space, Sci-fi, Physics",
+             "official_link": ""
+
         },
         {
             "title":"Reentry - An Orbital Simulator",
@@ -101,7 +122,8 @@
             "date":"Nov 15, 2018",
             "cv_image":"Reentry.jpg",
             "images": [],
-            "genre":"Space, Flight, Simulation"
+            "genre":"Space, Flight, Simulation",
+             "official_link": ""
         }
     ]
 }
