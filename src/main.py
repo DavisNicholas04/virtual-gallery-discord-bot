@@ -67,7 +67,7 @@ if __name__ == "__main__":
             button2 = interactions.Button(
                 style=interactions.ButtonStyle.LINK,
                 label=second_button_label,
-                url="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+                url=entity["official_link"]
             )
             await ctx.channel.send(
                     f"Title: {entity['title']}\n"
