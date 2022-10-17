@@ -2,56 +2,16 @@
     "history_link":"<link to history website>",
     "anime_link":"<link to anime website>",
     "games_link":"<link to games website>",
-   {
+   
     "history":[
-    {
-        "title":"string",
-    "description":"string",
-    "date":"dateTime",
-    "cv_image":"string<location of file in github>",
-    "images":[]
-},
-{
-    "title":"planets",
-    "description":"One Small Step for Man, One Giant Leap for Space",
-    "date":"2003",
-    "cv_image":"planetes.jpg",
-    "images":[]
-}
-],
-"anime":[
-
-        {"title":"Kanata no Astra",
-        "description":"In the year 2063, space travel is feasible andcommercially available",
-        "date":"Jul 3, 2019",
-        "cv_image":"Astra Lost in Space.jpg",
-        "images":[],
-        "genre":"Adventure, Mystery, Sci-Fi"
-    },
-    {"title":"Cowboy Bebop",
-        "description":"Crime is timeless",
-        "date":"Apr 3, 1998",
-        "cv_image":"Cowboy Bebop.jpg",
-        "images":[],
-        "genre":" Action, Sci-Fi"
-    },
-        {"title":"Sidonia no Kishi",
-        "description":"After destroying Earth many years ago, the alien race Gauna has been pursuing the remnants of humanity",
-        "date":"Apr 11, 2014",
-        "cv_image":"Sidonia no Kishi.jpg",
-        "images":[],
-        "genre":"Action, Sci-Fi"
-},
-{"title":"Kakumeiki Valvrave",
-        "description":"In the 71st year of the True Era, humans have successfully expanded into space and have started living in independent galactic colonies.",
-        "date":"Apr 12, 2013",
-        "cv_image":"Kakumeiki Valvrave.jpg",
-        "images":[],
-        "genre":" Action, Sci-Fi"
-},
-],
-}
-
+       {
+            "title":"string",
+            "description":"string",
+            "date":"dateTime",
+            "cv_image":"string<location of file in github>",
+            "images":[]
+        }
+    ],
     "anime": [
         {
             "title":"Space Dandy",
@@ -68,7 +28,39 @@
             "cv_image":"planetes.jpg",
             "images": [],
             "genre":"Drama, Romance, Sci-Fi"
-        }
+        },
+	{
+	    "title":"Kanata no Astra",
+            "description":"In the year 2063, space travel is feasible andcommercially available",
+            "date":"Jul 3, 2019",
+            "cv_image":"Astra Lost in Space.jpg",
+            "images":[],
+            "genre":"Adventure, Mystery, Sci-Fi"
+        },
+        {
+	    "title":"Cowboy Bebop",
+            "description":"Crime is timeless",
+            "date":"Apr 3, 1998",
+            "cv_image":"Cowboy Bebop.jpg",
+            "images":[],
+            "genre":" Action, Sci-Fi"
+         },
+         {
+	    "title":"Sidonia no Kishi",
+            "description":"After destroying Earth many years ago, the alien race Gauna has been pursuing the remnants of humanity",
+            "date":"Apr 11, 2014",
+            "cv_image":"Sidonia no Kishi.jpg",
+            "images":[],
+            "genre":"Action, Sci-Fi"
+         },
+         {
+	    "title":"Kakumeiki Valvrave",
+            "description":"In the 71st year of the True Era, humans have successfully expanded into space and have started living in independent galactic colonies.",
+            "date":"Apr 12, 2013",
+            "cv_image":"Kakumeiki Valvrave.jpg",
+            "images":[],
+            "genre":" Action, Sci-Fi"
+         }
     ],
     "game": [
         {
