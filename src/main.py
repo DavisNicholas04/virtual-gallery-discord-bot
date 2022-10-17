@@ -62,7 +62,7 @@ if __name__ == "__main__":
             button = interactions.Button(
                 style=interactions.ButtonStyle.LINK,
                 label=f"I'm interested in {' '.join(entity['title'].split()[:15])}",
-                url="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+                url=' '.join(entity['title'].split()[:15])
             )
             button2 = interactions.Button(
                 style=interactions.ButtonStyle.LINK,
