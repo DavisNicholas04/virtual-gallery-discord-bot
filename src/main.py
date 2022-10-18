@@ -14,7 +14,6 @@ if __name__ == "__main__":
     intent = interactions.Intents.DEFAULT
     client = interactions.Client(token=os.environ['DISCORD_TOKEN'], intents=intent)
 
-
     @client.command(
         name="start",
         description="start the interaction, which will tell the bot to message the user privately",
@@ -157,12 +156,14 @@ if __name__ == "__main__":
     )
     async def end(ctx: interactions.ComponentContext):
         survey = interactions.Modal(
-            title="How was your Experience?",
+            title="Survey",
             custom_id="survey",
             components=[
                 interactions.TextInput(
-                    label="Did you enjoy your experience with us today? (yes/no)",
+                    label="Did you enjoy your experience with us today?",
                     style=interactions.TextStyleType.SHORT,
+                    placeholder="yes or no",
+                    max_length=3
                 ),
                 interactions.TextInput(
                     label="If no, why not?",
@@ -178,5 +179,5 @@ if __name__ == "__main__":
                 )
             ]
         )
-        await ctx.send(components=survey, ephemeral=True)
+        await ctx.popup(survey)
     client.start()
