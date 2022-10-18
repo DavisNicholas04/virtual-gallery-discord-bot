@@ -178,5 +178,5 @@ if __name__ == "__main__":
                 )
             ]
         )
-        await ctx.send(components=survey)
+        await ctx.send(components=survey, ephemeral=True)
     client.start()
