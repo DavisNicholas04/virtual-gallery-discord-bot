@@ -163,19 +163,23 @@ if __name__ == "__main__":
                     label="Did you enjoy your experience with us today?",
                     style=interactions.TextStyleType.SHORT,
                     placeholder="yes or no",
-                    max_length=3
+                    max_length=3,
+                    custom_id="input1"
                 ),
                 interactions.TextInput(
                     label="If no, why not?",
                     style=interactions.TextStyleType.PARAGRAPH,
+                    custom_id="input2"
                 ),
                 interactions.TextInput(
                     label="How could we improve your experience?",
                     style=interactions.TextStyleType.PARAGRAPH,
+                    custom_id="input3"
                 ),
                 interactions.TextInput(
                     label="If there are any bugs you would like to report please list them here.",
-                    style=interactions.TextStyleType.PARAGRAPH
+                    style=interactions.TextStyleType.PARAGRAPH,
+                    custom_id="input4"
                 )
             ]
         )
