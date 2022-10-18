@@ -154,11 +154,19 @@ if __name__ == "__main__":
         name="end",
         description="ends the interaction, opens an optional survey",
     )
-    async def end(ctx: interactions.ComponentContext):
+    async def end(ctx: interactions.CommandContext):
         survey = interactions.Modal(
             title="Survey",
             custom_id="survey",
             components=[
+                interactions.TextInput(
+                    label="username (if you would like a follow-up)",
+                    style=interactions.TextStyleType.SHORT,
+                    placeholder="username",
+                    default="anonymous",
+                    max_length=32,
+                    custom_id="input1"
+                ),
                 interactions.TextInput(
                     label="Did you enjoy your experience with us today?",
                     style=interactions.TextStyleType.SHORT,
@@ -169,19 +177,40 @@ if __name__ == "__main__":
                 interactions.TextInput(
                     label="If no, why not?",
                     style=interactions.TextStyleType.PARAGRAPH,
-                    custom_id="input2"
+                    custom_id="input2",
+                    required=False
+
                 ),
                 interactions.TextInput(
                     label="How could we improve your experience?",
                     style=interactions.TextStyleType.PARAGRAPH,
-                    custom_id="input3"
+                    custom_id="input3",
+
                 ),
                 interactions.TextInput(
-                    label="If there are any bugs you would like to report please list them here.",
+                    label="Bugs? report them here.",
                     style=interactions.TextStyleType.PARAGRAPH,
-                    custom_id="input4"
-                )
+                    custom_id="input4",
+                    required=False
+                ),
             ]
         )
         await ctx.popup(survey)
+
+    @client.modal("survey")
+    async def change_genre(ctx: interactions.CommandContext, input1, input2, input3, input4):
+        logs = await interactions.get(client, interactions.Channel, object_id=int(os.environ["LOGS_CHANNEL"]))
+        await logs.send(f"""
+            
+            Did you enjoy your experience with us today?
+            **{input1}**
+            If no, why not?
+            **{input2}**
+            How could we improve your experience?
+            **{input3}**
+            Bugs? report them here.
+            **{input4}**
+            """)
+        await ctx.send("Thank you for filling out the survey. Join us again!")
+
     client.start()
