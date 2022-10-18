@@ -151,4 +151,32 @@ if __name__ == "__main__":
         await ctx.message.delete()
         await selection_menu(ctx)
 
+    @client.command(
+        name="end",
+        description="ends the interaction, opens an optional survey",
+    )
+    async def end(ctx: interactions.ComponentContext):
+        survey = interactions.Modal(
+            title="How was your Experience?",
+            custom_id="survey",
+            components=[
+                interactions.TextInput(
+                    label="Did you enjoy your experience with us today? (yes/no)",
+                    style=interactions.TextStyleType.SHORT,
+                ),
+                interactions.TextInput(
+                    label="If no, why not?",
+                    style=interactions.TextStyleType.PARAGRAPH,
+                ),
+                interactions.TextInput(
+                    label="How could we improve your experience?",
+                    style=interactions.TextStyleType.PARAGRAPH,
+                ),
+                interactions.TextInput(
+                    label="If there are any bugs you would like to report please list them here.",
+                    style=interactions.TextStyleType.PARAGRAPH
+                )
+            ]
+        )
+        await ctx.send(components=survey)
     client.start()
