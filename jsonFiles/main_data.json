@@ -2,7 +2,6 @@
     "history_link":"<link to history website>",
     "anime_link":"<link to anime website>",
     "games_link":"<link to games website>",
-   
     "history":[
        {
             "title":"string",
@@ -54,7 +53,6 @@
             "images": [],
             "genre":"comedy, Sci-Fi",
             "official_link": ""
-
         },
         {
             "title":"Planetes",
@@ -64,7 +62,6 @@
             "images": [],
             "genre":"Drama, Romance, Sci-Fi",
              "official_link": ""
-
         },
 	{
 	    "title":"Kanata no Astra",
@@ -74,7 +71,6 @@
             "images":[],
             "genre":"Adventure, Mystery, Sci-Fi",
             "official_link": ""
-
         },
         {
 	    "title":"Cowboy Bebop",
@@ -84,7 +80,6 @@
             "images":[],
             "genre":" Action, Sci-Fi",
             "official_link": ""
-
          },
          {
 	    "title":"Sidonia no Kishi",
@@ -94,7 +89,6 @@
             "images":[],
             "genre":"Action, Sci-Fi",
              "official_link": ""
-
          },
          {
 	    "title":"Kakumeiki Valvrave",
@@ -104,7 +98,6 @@
             "images":[],
             "genre":" Action, Sci-Fi",
              "official_link": ""
-
          }
     ],
     "game": [
@@ -116,7 +109,6 @@
             "images": [],
             "genre":"Space, Simulation, Physics",
             "official_link": "https://store.steampowered.com/app/220200/Kerbal_Space_Program/"
-
         },
 	    {
             "title":"Space Engine",
@@ -126,7 +118,6 @@
             "images": [],
             "genre":"Space, Sandbox, Casual",
              "official_link": "https://store.steampowered.com/app/314650/SpaceEngine/"
-
         },
         {
             "title":"Terra Invicta",
@@ -136,7 +127,6 @@
             "images": [],
             "genre":"Strategy, Space, Simulation",
              "official_link": "https://store.steampowered.com/app/1176470/Terra_Invicta/"
-
         },
         {
             "title":"Hardspace: Shipbreaker",
@@ -146,7 +136,6 @@
             "images": [],
             "genre":"Space, Sci-fi, Physics",
              "official_link": "https://store.steampowered.com/app/1161580/Hardspace_Shipbreaker/"
-
         },
         {
             "title":"Reentry - An Orbital Simulator",

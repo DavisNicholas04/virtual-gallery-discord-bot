@@ -1,7 +1,5 @@
 import random
-from src.controller.controller import get_resource_from_github
-from src.service.json_parser import MediaData
-import interactions
+
 
 def get_title(genre, index):
     """
@@ -72,23 +70,6 @@ def remove_body_tag_from_requests(response):
     :rtype: str
     """
     return str(response.content).removeprefix("b'").removesuffix("'")
-
-
-def get_two_recourses(selection):
-    full_json = get_resource_from_github("jsonFiles", "main_data.json")
-    mdo = MediaData.from_json(full_json)  # mdo = media data object
-
-    if selection == "history":
-        resources = gen_two_rand_resources(mdo.history)
-        return resources
-    elif selection == "anime":
-        resources = gen_two_rand_resources(mdo.anime)
-        return resources
-    elif selection == "games":
-        resources = gen_two_rand_resources(mdo.game)
-        return resources
-    else:
-        return None
 
 
 def gen_two_rand_resources(genre):

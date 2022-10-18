@@ -3,8 +3,7 @@ import time
 
 import interactions
 from dotenv import load_dotenv
-from src.service.helper_service import get_two_recourses
-from src.controller.controller import get_resource_from_github
+from src.controller.controller import get_resource_from_github, get_two_recourses
 
 # from src.service.helper_service import multi_component
 
@@ -55,9 +54,39 @@ if __name__ == "__main__":
             custom_id="reroll"
         )
         d = await ctx.send(f"You selected {selection[0]}. Great choice!")
-        await ctx.send("**you have a few options. select the one that interests you __or__**", components=reroll_button)
-        await roll(ctx, selection)
-
+        await ctx.send("**you have a few options. select the one that interests you.**", components=reroll_button)
+        # await roll(ctx, selection)
+        if selection[0] == "history":
+            second_button_label = "Official Webpage"
+        else:
+            second_button_label = "Buy now!"
+        resources = get_two_recourses(selection[0])
+        reroll_button_ids_dict[f"{ctx.user}-selection"] = selection
+        i = 0
+        msgs: [interactions.Message]
+        for entity in resources:
+            i = i + 1
+            button = interactions.Button(
+                style=interactions.ButtonStyle.LINK,
+                label=f"I'm interested in {entity['title'].split()[:15]}",
+                url=' '.join(entity['title'].split()[:15])
+            )
+            button2 = interactions.Button(
+                style=interactions.ButtonStyle.LINK,
+                label=second_button_label,
+                url=entity["official_link"]
+            )
+            # reroll_button_ids_dict[f"{ctx.user}-{i}"] = \
+            await ctx.channel.send(
+                    f"Title: {entity['title']}\n"
+                    f"Date:  {entity['date']}\n"
+                    f"Description:  {' '.join(str(entity['description']).split()[:20])}. . .",
+                    files=interactions.File(
+                        entity['cv_image'],
+                        fp=get_resource_from_github(f"images/{selection[0]}", entity["cv_image"], False)
+                    ),
+                    components=[button, button2]
+                )
 
     async def roll(ctx: interactions.ComponentContext, selection):
         if selection[0] == "history":
@@ -91,7 +120,6 @@ if __name__ == "__main__":
                     ),
                     components=[button, button2]
                 )
-
 
     @client.component("reroll")
     async def reroll(ctx: interactions.ComponentContext):
