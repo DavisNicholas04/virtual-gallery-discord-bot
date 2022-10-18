@@ -8,40 +8,35 @@
             "description":"string",
             "date":"dateTime",
             "cv_image":"string<location of file in github>",
-            "images":[],
-            "official_link": ""
+            "images":[]  
         },
 	{
             "title":"string",
             "description":"string",
             "date":"dateTime",
             "cv_image":"string<location of file in github>",
-            "images":[],
-            "official_link": ""
+            "images":[]  
        },
        {
             "title":"string",
             "description":"string",
             "date":"dateTime",
             "cv_image":"string<location of file in github>",
-            "images":[],
-            "official_link": ""
+            "images":[]  
         },
         {
             "title":"string",
             "description":"string",
             "date":"dateTime",
             "cv_image":"string<location of file in github>",
-            "images":[],
-            "official_link": ""
+            "images":[]  
         },
         {
             "title":"string",
             "description":"string",
             "date":"dateTime",
             "cv_image":"string<location of file in github>",
-            "images":[],
-            "official_link": ""
+            "images":[]  
         }
     ],
     "anime": [
@@ -51,8 +46,7 @@
             "date":"Jan 5, 2014",
             "cv_image":"spaceDandy.jpg",
             "images": [],
-            "genre":"comedy, Sci-Fi",
-            "official_link": ""
+            "genre":"comedy, Sci-Fi"  
         },
         {
             "title":"Planetes",
@@ -60,8 +54,7 @@
             "date":"Oct 4, 2003",
             "cv_image":"planetes.jpg",
             "images": [],
-            "genre":"Drama, Romance, Sci-Fi",
-             "official_link": ""
+            "genre":"Drama, Romance, Sci-Fi"  
         },
 	{
 	    "title":"Kanata no Astra",
@@ -69,8 +62,7 @@
             "date":"Jul 3, 2019",
             "cv_image":"Astra Lost in Space.jpg",
             "images":[],
-            "genre":"Adventure, Mystery, Sci-Fi",
-            "official_link": ""
+            "genre":"Adventure, Mystery, Sci-Fi"  
         },
         {
 	    "title":"Cowboy Bebop",
@@ -78,8 +70,7 @@
             "date":"Apr 3, 1998",
             "cv_image":"Cowboy Bebop.jpg",
             "images":[],
-            "genre":" Action, Sci-Fi",
-            "official_link": ""
+            "genre":" Action, Sci-Fi"  
          },
          {
 	    "title":"Sidonia no Kishi",
@@ -87,8 +78,7 @@
             "date":"Apr 11, 2014",
             "cv_image":"Sidonia no Kishi.jpg",
             "images":[],
-            "genre":"Action, Sci-Fi",
-             "official_link": ""
+            "genre":"Action, Sci-Fi"  
          },
          {
 	    "title":"Kakumeiki Valvrave",
@@ -96,8 +86,7 @@
             "date":"Apr 12, 2013",
             "cv_image":"Kakumeiki Valvrave.jpg",
             "images":[],
-            "genre":" Action, Sci-Fi",
-             "official_link": ""
+            "genre":" Action, Sci-Fi"  
          }
     ],
     "game": [
@@ -107,8 +96,7 @@
             "date":"Apr 27, 2015",
             "cv_image":"KSP.jpg",
             "images": [],
-            "genre":"Space, Simulation, Physics",
-            "official_link": "https://store.steampowered.com/app/220200/Kerbal_Space_Program/"
+            "genre":"Space, Simulation, Physics"  
         },
 	    {
             "title":"Space Engine",
@@ -116,8 +104,7 @@
             "date":"Jun 11, 2019",
             "cv_image":"SE.jpg",
             "images": [],
-            "genre":"Space, Sandbox, Casual",
-             "official_link": "https://store.steampowered.com/app/314650/SpaceEngine/"
+            "genre":"Space, Sandbox, Casual"  
         },
         {
             "title":"Terra Invicta",
@@ -125,8 +112,7 @@
             "date":"Sep 26, 2022",
             "cv_image":"TI.jpg",
             "images": [],
-            "genre":"Strategy, Space, Simulation",
-             "official_link": "https://store.steampowered.com/app/1176470/Terra_Invicta/"
+            "genre":"Strategy, Space, Simulation"  
         },
         {
             "title":"Hardspace: Shipbreaker",
@@ -134,8 +120,7 @@
             "date":"May 24, 2022",
             "cv_image":"HS.jpg",
             "images": [],
-            "genre":"Space, Sci-fi, Physics",
-             "official_link": "https://store.steampowered.com/app/1161580/Hardspace_Shipbreaker/"
+            "genre":"Space, Sci-fi, Physics"  
         },
         {
             "title":"Reentry - An Orbital Simulator",
@@ -143,8 +128,7 @@
             "date":"Nov 15, 2018",
             "cv_image":"Reentry.jpg",
             "images": [],
-            "genre":"Space, Flight, Simulation",
-             "official_link": "https://store.steampowered.com/app/882140/Reentry__An_Orbital_Simulator/"
+            "genre":"Space, Flight, Simulation"  
         }
     ]
 }
