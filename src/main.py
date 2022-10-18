@@ -19,16 +19,19 @@ if __name__ == "__main__":
         name="start",
         description="start the interaction, which will tell the bot to message the user privately",
     )
-    async def start(msg: interactions.ComponentContext):
+    async def start(ctx: interactions.ComponentContext):
         website_button = interactions.Button(
             style=interactions.ButtonStyle.LINK,
             label="go to website",
             url="https://cs.oswego.edu/~acascen/coursework/Virtual%20Gallery.HTML"
         )
-        await msg.send("Welcome to the interactive virtual gallery experience. "
+        await ctx.send("Welcome to the interactive virtual gallery experience. "
                        "For a list of commands use the ``/help`` command.\n"
                        "You can also go straight to our website here.", components=website_button)
-        time.sleep(1)
+        await selection_menu(ctx)
+
+
+    async def selection_menu(ctx: interactions.ComponentContext):
         options = interactions.SelectMenu(
             custom_id="genre_select",
             options=[
@@ -41,20 +44,27 @@ if __name__ == "__main__":
                 interactions.SelectOption(custom_id="custom_id_games", label="Games",
                                           value="games", decription="description_games")],
 
-            placeholder="Choose your experience",
+            placeholder="select",
         )
-        await msg.send(content="select on of the following options", components=options)
-
+        await ctx.send(content="select on of the following options", components=options)
 
     @client.component("genre_select")
     async def select_menu_response(ctx: interactions.ComponentContext, selection):
-        reroll_button = interactions.Button(
-            style=interactions.ButtonStyle.PRIMARY,
-            label="reroll",
-            custom_id="reroll"
-        )
-        d = await ctx.send(f"You selected {selection[0]}. Great choice!")
-        await ctx.send("**you have a few options. select the one that interests you.**", components=reroll_button)
+        new_options_buttons = [
+            interactions.Button(
+                style=interactions.ButtonStyle.PRIMARY,
+                label="reroll",
+                custom_id="reroll"
+            ),
+            interactions.Button(
+                style=interactions.ButtonStyle.SECONDARY,
+                label="change genre",
+                custom_id="change_genre"
+            )
+        ]
+        await ctx.message.edit(f"You selected {selection[0]}. Great choice!")
+        # await ctx.send(f"You selected {selection[0]}. Great choice!")
+        await ctx.send("**you have a few options. select the one that interests you.**", components=new_options_buttons)
         await roll(ctx, selection)
 
 
@@ -66,13 +76,13 @@ if __name__ == "__main__":
         resources = get_two_recourses(selection[0])
         reroll_button_ids_dict[f"{ctx.user}-selection"] = selection
         i = 0
-        msgs: [interactions.Message]
+        # msgs: [interactions.Message]
         for entity in resources:
             i = i + 1
             button = interactions.Button(
                 style=interactions.ButtonStyle.LINK,
                 label=f"I'm interested in {entity['title'].split()[:15]}",
-                url=' '.join(entity['title'].split()[:15])
+                url="https://www.cs.oswego.edu/~acascen/coursework/Virtual%20Gallery.HTML"
             )
             button2 = interactions.Button(
                 style=interactions.ButtonStyle.LINK,
@@ -91,14 +101,54 @@ if __name__ == "__main__":
                     components=[button, button2]
                 )
 
+
     @client.component("reroll")
     async def reroll(ctx: interactions.ComponentContext):
-        reroll_button_ids_dict.get(f"{ctx.user}-{1}").delete()
-        reroll_button_ids_dict.get(f"{ctx.user}-{2}").delete()
+        new_options_buttons = [
+            interactions.Button(
+                style=interactions.ButtonStyle.PRIMARY,
+                label="reroll",
+                custom_id="reroll"
+            ),
+            interactions.Button(
+                style=interactions.ButtonStyle.SECONDARY,
+                label="change genre",
+                custom_id="change_genre"
+            )
+        ]
+        new_options_buttons2 = [
+            interactions.Button(
+                style=interactions.ButtonStyle.SUCCESS,
+                label="reroll",
+                custom_id="reroll"
+            ),
+            interactions.Button(
+                style=interactions.ButtonStyle.SECONDARY,
+                label="change genre",
+                custom_id="change_genre"
+            )
+        ]
+        await ctx.message.edit(components=new_options_buttons)
+        await ctx.defer(edit_origin=True)
+        msg = await ctx.channel.get_message(reroll_button_ids_dict.get(f"{ctx.user}-{1}").id)
+        await msg.delete()
+        msg = await ctx.channel.get_message(reroll_button_ids_dict.get(f"{ctx.user}-{2}").id)
+        await msg.delete()
         selection = reroll_button_ids_dict.get(f"{ctx.user}-selection")
-        await roll(ctx, selection)
-
         reroll_button_ids_dict.pop(f"{ctx.user}-selection")
+        reroll_button_ids_dict.pop(f"{ctx.user}-{1}")
+        reroll_button_ids_dict.pop(f"{ctx.user}-{2}")
+        await roll(ctx, selection)
+        await ctx.message.edit(components=new_options_buttons2)
 
+
+    @client.component("change_genre")
+    async def change_genre(ctx: interactions.ComponentContext):
+        msg = await ctx.channel.get_message(reroll_button_ids_dict.get(f"{ctx.user}-{1}").id)
+        await msg.delete()
+        msg = await ctx.channel.get_message(reroll_button_ids_dict.get(f"{ctx.user}-{2}").id)
+        await msg.delete()
+        await ctx.message.delete()
+        await selection_menu(ctx)
 
     client.start()

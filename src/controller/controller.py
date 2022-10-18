@@ -16,14 +16,12 @@ def get_resource_from_github(folder, file, return_string=True):
     """
     response = requests.get(f"{os.environ['RAW_GITHUB_ROOT_URL'] + folder + '/' + file}")
     if response.status_code == 200:
-        # print(response.content)
         if return_string:
             backslash = "\\"
             val = str(response.content).removeprefix("b'").removesuffix("'").replace("\\n", "").replace("\\t", "").replace(backslash, "")
             return val
         else:
             val2 = response.content
-            # print(val2)
             return val2
     else:
         print(f"{response.status_code}: {response.content}")
