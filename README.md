@@ -3,12 +3,9 @@
 ## Purpose
 to bring an easy and immersive experience to those wanting to explore art everywhere.
 
-This virtual gallery discord bot allows users to interact with art from a gallery through one of 
-the most popular VoIP and instant messaging social platform, discord. With this you can use the all
-the bots features by making a single discord account. 
+This virtual gallery discord bot allows users to interact with art from a gallery through one of the most popular VoIP and instant messaging social platform, discord. With this you can use the all the bots features by making a single discord account. 
 
 ## Getting Started
-
 1. Make a discord account.
    1. You can click [this link](https://discord.com/register) to get sign up.
 2. Log in and join our server.
@@ -18,7 +15,6 @@ the bots features by making a single discord account.
 4. When you are done, feel free to stop by the `general` channel and talk us and other members.
 
 ## Bot Vocabulary
-
 - Go to website - This will redirect you to the homepage of our website.
 - Reroll - generate a new subset of resources if you wish to continue your interaction or are not interested in the current selection (this will delete the old subset of data)
 - Change genre - We provide three genres (or categories): History, Anime, Games. selecting `change genre` will enable you to switch your current selection (this will delete the old subset of data)
