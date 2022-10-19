@@ -53,6 +53,7 @@ if __name__ == "__main__":
         reroll_button_ids_dict[f"{ctx.user}-selection"] = selection
 
         for entity, i in resources, range(resources):
+            await ctx.send(f"{entity}+{i}")
             rolls = cpnts.create_roll_buttons(entity, second_button_label)
             reroll_button_ids_dict[f"{ctx.user}-{i}"] = \
                 await ctx.user.send(
