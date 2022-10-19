@@ -1,8 +1,8 @@
 import requests
 import os
 
-from src.service.helper_service import remove_body_tag_from_requests, gen_two_rand_resources
-from src.service.json_parser import MediaData
+from src.utils.utils import gen_two_rand_resources
+from src.model.main_data_model import MediaData
 
 
 def get_resource_from_github(folder, file, return_string=True):

@@ -5,7 +5,7 @@ import time
 import interactions
 from dotenv import load_dotenv
 import src.components.components as cpnts
-from src.controller.controller import get_resource_from_github, get_two_recourses
+from src.service.github_service import get_resource_from_github, get_two_recourses
 
 reroll_button_ids_dict = {}
 
@@ -13,7 +13,8 @@ if __name__ == "__main__":
     load_dotenv()
     intent = interactions.Intents.DEFAULT
     client = interactions.Client(token=os.environ['DISCORD_TOKEN'], intents=intent)
-
+    # client.load("src.extensions.command_extensions")
+    # client.load("src.extensions.component_extensions")
 
     @client.command(
         name="start",
@@ -35,9 +36,8 @@ if __name__ == "__main__":
     @client.component("genre_select")
     async def select_menu_response(ctx: interactions.ComponentContext, selection):
         new_options_buttons = cpnts.enabled_button_group
-        await ctx.disable_all_components()
+        await ctx.message.delete()
         await ctx.send(f"You selected {selection[0]}. Great choice!")
-        # await   ctx.author.send(f"You selected {selection[0]}. Great choice!")
         await ctx.send("**you have a few options. select the one that interests you.**", components=new_options_buttons)
         await roll(ctx, selection)
 
@@ -52,8 +52,7 @@ if __name__ == "__main__":
         resources = get_two_recourses(selection[0])
         reroll_button_ids_dict[f"{ctx.user}-selection"] = selection
 
-        for entity, i in resources, range(resources):
-            await ctx.send(f"{entity}+{i}")
+        for i, entity in enumerate(resources):
             rolls = cpnts.create_roll_buttons(entity, second_button_label)
             reroll_button_ids_dict[f"{ctx.user}-{i}"] = \
                 await ctx.user.send(
@@ -66,7 +65,7 @@ if __name__ == "__main__":
 
 
     def get_image(entity, selection):
-        interactions.File(
+        return interactions.File(
             entity['cv_image'],
             fp=get_resource_from_github(f"images/{selection[0]}", entity["cv_image"], False)
         )
@@ -79,8 +78,8 @@ if __name__ == "__main__":
         await delete_rolls(ctx)
         selection = reroll_button_ids_dict.get(f"{ctx.user}-selection")
         reroll_button_ids_dict.pop(f"{ctx.user}-selection")
+        reroll_button_ids_dict.pop(f"{ctx.user}-{0}")
         reroll_button_ids_dict.pop(f"{ctx.user}-{1}")
-        reroll_button_ids_dict.pop(f"{ctx.user}-{2}")
         await roll(ctx, selection)
         threading.Thread(
             target=await send_edited_button(ctx, cpnts.success_button_group)
@@ -107,22 +106,16 @@ if __name__ == "__main__":
         :return: null
         """
         msg = await ctx.message.get_from_url(
-            reroll_button_ids_dict.get(f"{ctx.user}-{1}").url,
+            reroll_button_ids_dict.get(f"{ctx.user}-{0}").url,
             client=client._http
         )
         await msg.delete()
 
         msg = await ctx.message.get_from_url(
-            reroll_button_ids_dict.get(f"{ctx.user}-{2}").url,
+            reroll_button_ids_dict.get(f"{ctx.user}-{1}").url,
             client=client._http
         )
         await msg.delete()
-
-
-    # @client.component("end")
-    # async def end(ctx: interactions.CommandContext):
-    #     await ctx.popup(cpnts.survey)
-
 
     @client.modal("survey")
     async def change_genre(ctx: interactions.CommandContext, input1, input2, input3, input4):
@@ -144,5 +137,6 @@ if __name__ == "__main__":
         await delete_rolls(ctx)
         await ctx.message.delete()
         await ctx.popup(cpnts.survey)
+
 
     client.start()
