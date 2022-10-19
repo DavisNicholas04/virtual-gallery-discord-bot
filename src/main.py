@@ -1,10 +1,10 @@
 import os
+import threading
 import time
 
 import interactions
 from dotenv import load_dotenv
 from src.controller.controller import get_resource_from_github, get_two_recourses
-
 # from src.service.helper_service import multi_component
 
 reroll_button_ids_dict = {}
@@ -25,7 +25,7 @@ if __name__ == "__main__":
             label="go to website",
             url="https://cs.oswego.edu/~acascen/coursework/Virtual%20Gallery.HTML"
         )
-        await   ctx.author.send("Welcome to the interactive virtual gallery experience. "
+        await ctx.user.send("Welcome to the interactive virtual gallery experience. "
                        "For a list of commands use the ``/help`` command.\n"
                        "You can also go straight to our website here.", components=website_button)
         await selection_menu(ctx)
@@ -46,7 +46,7 @@ if __name__ == "__main__":
 
             placeholder="select",
         )
-        await ctx.author.send(content="select on of the following options", components=options)
+        await ctx.user.send(content="select one of the following options", components=options)
 
     @client.component("genre_select")
     async def select_menu_response(ctx: interactions.ComponentContext, selection):
@@ -62,9 +62,10 @@ if __name__ == "__main__":
                 custom_id="change_genre"
             )
         ]
-        await ctx.author.message.edit(f"You selected {selection[0]}. Great choice!")
+        await ctx.disable_all_components()
+        await ctx.send(f"You selected {selection[0]}. Great choice!")
         # await   ctx.author.send(f"You selected {selection[0]}. Great choice!")
-        await ctx.author.send("**you have a few options. select the one that interests you.**", components=new_options_buttons)
+        await ctx.send("**you have a few options. select the one that interests you.**", components=new_options_buttons)
         await roll(ctx, selection)
 
     async def roll(ctx: interactions.ComponentContext, selection):
@@ -89,7 +90,7 @@ if __name__ == "__main__":
                 url=entity["official_link"]
             )
             reroll_button_ids_dict[f"{ctx.user}-{i}"] = \
-                await ctx.author.send(
+                await ctx.user.send(
                     f"Title: {entity['title']}\n"
                     f"Date:  {entity['date']}\n"
                     f"Description:  {' '.join(str(entity['description']).split()[:20])}. . .",
@@ -97,7 +98,7 @@ if __name__ == "__main__":
                         entity['cv_image'],
                         fp=get_resource_from_github(f"images/{selection[0]}", entity["cv_image"], False)
                     ),
-                    components=[button, button2]
+                    components=[button, button2],
                 )
 
     @client.component("reroll")
@@ -106,7 +107,8 @@ if __name__ == "__main__":
             interactions.Button(
                 style=interactions.ButtonStyle.PRIMARY,
                 label="reroll",
-                custom_id="reroll"
+                custom_id="reroll",
+                disabled=True
             ),
             interactions.Button(
                 style=interactions.ButtonStyle.SECONDARY,
@@ -128,25 +130,32 @@ if __name__ == "__main__":
         ]
         await ctx.message.edit(components=new_options_buttons)
         await ctx.defer(edit_origin=True)
-        msg = await ctx.channel.get_message(reroll_button_ids_dict.get(f"{ctx.user}-{1}").id)
-        await msg.delete()
-        msg = await ctx.channel.get_message(reroll_button_ids_dict.get(f"{ctx.user}-{2}").id)
-        await msg.delete()
+        await delete_rolls(ctx)
         selection = reroll_button_ids_dict.get(f"{ctx.user}-selection")
         reroll_button_ids_dict.pop(f"{ctx.user}-selection")
         reroll_button_ids_dict.pop(f"{ctx.user}-{1}")
         reroll_button_ids_dict.pop(f"{ctx.user}-{2}")
         await roll(ctx, selection)
+        threading.Thread(
+            target=await send_edited_button(ctx,new_options_buttons2)
+        )
+
+    async def send_edited_button(ctx, new_options_buttons2):
+        time.sleep(4)
         await ctx.message.edit(components=new_options_buttons2)
+
 
     @client.component("change_genre")
     async def change_genre(ctx: interactions.ComponentContext):
-        msg = await ctx.channel.get_message(reroll_button_ids_dict.get(f"{ctx.user}-{1}").id)
-        await msg.delete()
-        msg = await ctx.channel.get_message(reroll_button_ids_dict.get(f"{ctx.user}-{2}").id)
-        await msg.delete()
+        await delete_rolls(ctx)
         await ctx.message.delete()
         await selection_menu(ctx)
+
+    async def delete_rolls(ctx):
+        msg = await ctx.message.get_from_url(reroll_button_ids_dict.get(f"{ctx.user}-{1}").url, client=client._http)
+        await msg.delete()
+        msg = await ctx.message.get_from_url(reroll_button_ids_dict.get(f"{ctx.user}-{2}").url, client=client._http)
+        await msg.delete()
 
     @client.command(
         name="end",
