@@ -19,6 +19,7 @@ if __name__ == "__main__":
         description="start the interaction, which will tell the bot to message the user privately",
     )
     async def start(ctx: interactions.ComponentContext):
+        await ctx.defer()
         website_button = interactions.Button(
             style=interactions.ButtonStyle.LINK,
             label="go to website",
@@ -28,6 +29,7 @@ if __name__ == "__main__":
                        "For a list of commands use the ``/help`` command.\n"
                        "You can also go straight to our website here.", components=website_button)
         await selection_menu(ctx)
+
 
     async def selection_menu(ctx: interactions.ComponentContext):
         options = interactions.SelectMenu(
@@ -60,7 +62,7 @@ if __name__ == "__main__":
                 custom_id="change_genre"
             )
         ]
-        await ctx.message.edit(f"You selected {selection[0]}. Great choice!")
+        await ctx.author.message.edit(f"You selected {selection[0]}. Great choice!")
         # await   ctx.author.send(f"You selected {selection[0]}. Great choice!")
         await   ctx.author.send("**you have a few options. select the one that interests you.**", components=new_options_buttons)
         await roll(ctx, selection)
@@ -87,7 +89,7 @@ if __name__ == "__main__":
                 url=entity["official_link"]
             )
             reroll_button_ids_dict[f"{ctx.user}-{i}"] = \
-                await ctx.channel.send(
+                await ctx.author.send(
                     f"Title: {entity['title']}\n"
                     f"Date:  {entity['date']}\n"
                     f"Description:  {' '.join(str(entity['description']).split()[:20])}. . .",
