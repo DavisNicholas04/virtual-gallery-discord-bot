@@ -8,16 +8,18 @@
         {
             "title":"string",
             "description":"string",
-	        "date":"dateTime",
-            "cv_images":"string <location of file in github>",
-            "images": []
+            "date":"dateTime",
+            "cv_image":"string<location of file in github>",
+            "images":[],
+            "official_link": ""
 	    },
         {
             "title":"string",
             "description":"string",
-	        "date":"dateTime",
-            "cv_images":"string <location of file in github>",
-            "images": []
+            "date":"dateTime",
+            "cv_image":"string<location of file in github>",
+            "images":[],
+            "official_link": ""
 	    }
     ],
 
@@ -25,18 +27,22 @@
         {
             "title":"string",
             "description":"string",
-            "release_date":"dateTime",
-            "cv_images":"string <location of file in github>", 
+            "date":"dateTime",
+            "cv_image":"string <location of file in github>", 
             "images": [],
-            "genre":"string"
+            "genre":"string",
+            "official_link": ""
+
         },
         {
             "title":"string",
             "description":"string",
-            "release_date":"dateTime",
-            "cv_images":"string <location of file in github>", 
+            "date":"dateTime",
+            "cv_image":"string <location of file in github>", 
             "images": [],
-            "genre":"string"
+            "genre":"string",
+            "official_link": ""
+
         }
     ],
 
@@ -44,18 +50,20 @@
         {
             "title":"string",
             "description":"string",
-            "release_date":"dateTime",
-            "cv_images":"string <location of file in github>",
+            "date":"dateTime",
+            "cv_image":"string <location of file in github>", 
             "images": [],
-            "genre":"string"
+            "genre":"string",
+            "official_link": ""
         },
         {
             "title":"string",
             "description":"string",
-            "release_date":"dateTime",
-            "cv_images":"string <location of file in github>",
+            "date":"dateTime",
+            "cv_image":"string <location of file in github>", 
             "images": [],
-            "genre":"string"
+            "genre":"string",
+            "official_link": ""
         }
     ]
 }
