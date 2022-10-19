@@ -2,12 +2,13 @@ import interactions
 # import src.service.component_service as cs
 import src.components.components as cpnts
 import threading
-import src.service.component_service as cs
+import src.service.component_service as component_service
 
 
 class Components(interactions.Extension):
     def __init__(self, client):
         self.client: interactions.Client = client
+        cs = component_service.ComponentService(self.client, {})
 
         @self.client.component("genre_select")
         async def select_menu_response(ctx: interactions.ComponentContext, selection):
@@ -22,26 +23,26 @@ class Components(interactions.Extension):
         async def reroll(ctx: interactions.ComponentContext):
             await ctx.message.edit(components=cpnts.disabled_button_group)
             await ctx.defer(edit_origin=True)
-            await cs.delete_rolls(ctx, self.client)
+            await cs.delete_rolls(ctx)
             selection = cs.reroll_button_ids_dict.get(f"{ctx.user}-selection")
             cs.reroll_button_ids_dict.pop(f"{ctx.user}-selection")
             cs.reroll_button_ids_dict.pop(f"{ctx.user}-{0}")
             cs.reroll_button_ids_dict.pop(f"{ctx.user}-{1}")
             await cs.roll(ctx, selection)
             threading.Thread(
-                target=await cs.send_edited_button(ctx, cpnts.success_button_group)
+                target=await component_service.send_edited_button(ctx, cpnts.success_button_group)
             )
 
         @self.client.component("change_genre")
         async def change_genre(ctx: interactions.ComponentContext):
             await cs.delete_rolls(ctx)
             await ctx.message.delete()
-            await cs.selection_menu(ctx)
+            await component_service.selection_menu(ctx)
 
         @self.client.component("end")
         async def end_interaction(ctx: interactions.ComponentContext):
             # sends a modal
-            await cs.delete_rolls(ctx, self.client)
+            await cs.delete_rolls(ctx)
             await ctx.message.delete()
             await ctx.popup(cpnts.survey)
 
