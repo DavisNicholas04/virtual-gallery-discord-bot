@@ -78,14 +78,3 @@ def gen_two_rand_resources(genre):
     index2 = random.choice([i for i in range(0, mdo_len) if i not in [index1]])
     resources: [] = genre[index1], genre[index2]
     return resources
-
-
-# def multi_component(custom_dict: dict, client: interactions.Client):
-#     len(custom_dict)
-#     myList = []
-#     for val in custom_dict.values():
-#         @client.component(val)
-#         async def adf(ctx: interactions.ComponentContext, selection):
-#             await ctx.send(f"oh wow, you're interested in {selection}, that's a really good choice")
-#
-

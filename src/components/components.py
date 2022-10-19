@@ -14,6 +14,7 @@ end_interaction_button = interactions.Button(
     custom_id="end"
 )
 
+
 def create_roll_buttons(entity, second_button_label):
     button = interactions.Button(
         style=interactions.ButtonStyle.LINK,
@@ -29,6 +30,8 @@ def create_roll_buttons(entity, second_button_label):
 # /-S-T-A-R-T--------------------\
 # | re-roll buttons              |
 # \------------------------------/
+
+
 original_rr_button = interactions.Button(
     style=interactions.ButtonStyle.PRIMARY,  # Original re-roll button
     label="reroll",
@@ -157,4 +160,3 @@ survey = interactions.Modal(
 # /------------------------E-N-D-\
 # | survey modal                 |
 # \------------------------------/
-

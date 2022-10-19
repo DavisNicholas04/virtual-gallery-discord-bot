@@ -2,7 +2,7 @@ import requests
 import os
 
 from src.utils.utils import gen_two_rand_resources
-from src.model.main_data_model import MediaData
+from src.model.media_data import MediaData
 
 
 def get_resource_from_github(folder, file, return_string=True):
