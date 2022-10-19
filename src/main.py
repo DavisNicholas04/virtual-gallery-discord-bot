@@ -19,7 +19,7 @@ if __name__ == "__main__":
         description="start the interaction, which will tell the bot to message the user privately",
     )
     async def start(ctx: interactions.ComponentContext):
-        await ctx.defer()
+        await ctx.send("Thanks! I sent you a private message so lets get started!")
         website_button = interactions.Button(
             style=interactions.ButtonStyle.LINK,
             label="go to website",
@@ -46,7 +46,7 @@ if __name__ == "__main__":
 
             placeholder="select",
         )
-        await   ctx.author.send(content="select on of the following options", components=options)
+        await ctx.author.send(content="select on of the following options", components=options)
 
     @client.component("genre_select")
     async def select_menu_response(ctx: interactions.ComponentContext, selection):
@@ -64,7 +64,7 @@ if __name__ == "__main__":
         ]
         await ctx.author.message.edit(f"You selected {selection[0]}. Great choice!")
         # await   ctx.author.send(f"You selected {selection[0]}. Great choice!")
-        await   ctx.author.send("**you have a few options. select the one that interests you.**", components=new_options_buttons)
+        await ctx.author.send("**you have a few options. select the one that interests you.**", components=new_options_buttons)
         await roll(ctx, selection)
 
     async def roll(ctx: interactions.ComponentContext, selection):
