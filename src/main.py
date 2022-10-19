@@ -24,11 +24,10 @@ if __name__ == "__main__":
             label="go to website",
             url="https://cs.oswego.edu/~acascen/coursework/Virtual%20Gallery.HTML"
         )
-        await ctx.send("Welcome to the interactive virtual gallery experience. "
+        await   ctx.author.send("Welcome to the interactive virtual gallery experience. "
                        "For a list of commands use the ``/help`` command.\n"
                        "You can also go straight to our website here.", components=website_button)
         await selection_menu(ctx)
-
 
     async def selection_menu(ctx: interactions.ComponentContext):
         options = interactions.SelectMenu(
@@ -45,7 +44,7 @@ if __name__ == "__main__":
 
             placeholder="select",
         )
-        await ctx.send(content="select on of the following options", components=options)
+        await   ctx.author.send(content="select on of the following options", components=options)
 
     @client.component("genre_select")
     async def select_menu_response(ctx: interactions.ComponentContext, selection):
@@ -62,10 +61,9 @@ if __name__ == "__main__":
             )
         ]
         await ctx.message.edit(f"You selected {selection[0]}. Great choice!")
-        # await ctx.send(f"You selected {selection[0]}. Great choice!")
-        await ctx.send("**you have a few options. select the one that interests you.**", components=new_options_buttons)
+        # await   ctx.author.send(f"You selected {selection[0]}. Great choice!")
+        await   ctx.author.send("**you have a few options. select the one that interests you.**", components=new_options_buttons)
         await roll(ctx, selection)
-
 
     async def roll(ctx: interactions.ComponentContext, selection):
         if selection[0] == "history":
@@ -99,7 +97,6 @@ if __name__ == "__main__":
                     ),
                     components=[button, button2]
                 )
-
 
     @client.component("reroll")
     async def reroll(ctx: interactions.ComponentContext):
@@ -139,7 +136,6 @@ if __name__ == "__main__":
         reroll_button_ids_dict.pop(f"{ctx.user}-{2}")
         await roll(ctx, selection)
         await ctx.message.edit(components=new_options_buttons2)
-
 
     @client.component("change_genre")
     async def change_genre(ctx: interactions.ComponentContext):
@@ -200,8 +196,7 @@ if __name__ == "__main__":
     @client.modal("survey")
     async def change_genre(ctx: interactions.CommandContext, input1, input2, input3, input4):
         logs = await interactions.get(client, interactions.Channel, object_id=int(os.environ["LOGS_CHANNEL"]))
-        await logs.send(f"""
-            
+        await logs.send(f"""            
             Did you enjoy your experience with us today?
             **{input1}**
             If no, why not?
