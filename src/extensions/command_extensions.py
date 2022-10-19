@@ -13,9 +13,8 @@ class Commands(interactions.Extension):
     )
     async def start(self, ctx: interactions.ComponentContext):
         await ctx.send("Thanks! I sent you a private message so lets get started!")
-        await ctx.user.send("Welcome to the interactive virtual gallery experience. "
-                            "For a list of commands use the ``/help`` command.\n"
-                            "You can also go straight to our website here.",
+        await ctx.user.send("Welcome to the interactive virtual gallery experience.\n"
+                            "You can go straight to our website here.",
                             components=cpnts.website_button)
         await cs.selection_menu(ctx)
 
