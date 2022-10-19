@@ -118,9 +118,9 @@ if __name__ == "__main__":
         await msg.delete()
 
 
-    @client.component("end")
-    async def end(ctx: interactions.CommandContext):
-        await ctx.popup(cpnts.survey)
+    # @client.component("end")
+    # async def end(ctx: interactions.CommandContext):
+    #     await ctx.popup(cpnts.survey)
 
 
     @client.modal("survey")
@@ -138,5 +138,10 @@ if __name__ == "__main__":
             """)
         await ctx.send("Thank you for filling out the survey. Join us again!")
 
+    @client.component("end")
+    async def end_interaction(ctx: interactions.ComponentContext):
+        await delete_rolls(ctx)
+        await ctx.message.delete()
+        await ctx.popup(cpnts.survey)
 
     client.start()
