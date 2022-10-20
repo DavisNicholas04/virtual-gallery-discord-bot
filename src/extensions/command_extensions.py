@@ -21,4 +21,3 @@ class Commands(interactions.Extension):
 
 def setup(client):
     Commands(client)
-

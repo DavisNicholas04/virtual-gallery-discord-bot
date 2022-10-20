@@ -7,9 +7,9 @@ from src.model.media_data import MediaData
 
 def get_resource_from_github(folder, file, return_string=True):
     """
-    makes a request to an endpoint you specify on github's raw user content api
+    makes a request to an endpoint you specify on GitHub's raw user content api
 
-    :param return_string: specifies whether or not you want the response as a string or in it's original form
+    :param return_string: specifies whether you want the response as a string or in its original form
     :param folder: the directory you are trying to reach from tree/main
     :param file: fileName that you wish to access from the json directory
     :return: string representation of a json object
@@ -18,7 +18,12 @@ def get_resource_from_github(folder, file, return_string=True):
     if response.status_code == 200:
         if return_string:
             backslash = "\\"
-            val = str(response.content).removeprefix("b'").removesuffix("'").replace("\\n", "").replace("\\t", "").replace(backslash, "")
+            val = str(response.content)\
+                .removeprefix("b'")\
+                .removesuffix("'")\
+                .replace("\\n", "")\
+                .replace("\\t", "")\
+                .replace(backslash, "")
             return val
         else:
             val2 = response.content
