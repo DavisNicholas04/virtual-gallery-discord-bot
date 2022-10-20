@@ -10,7 +10,6 @@ class ComponentService(interactions.Extension):
         self.client: interactions.Client = client
         self.reroll_button_ids_dict = reroll_button_ids_dict
 
-    # reroll_button_ids_dict = {}
 
     async def roll(self, ctx: interactions.ComponentContext, selection):
         # choose second button label base on user selection
