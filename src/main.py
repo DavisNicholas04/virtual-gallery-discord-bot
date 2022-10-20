@@ -10,7 +10,7 @@ if __name__ == "__main__":
     client = interactions.Client(token=os.environ['DISCORD_TOKEN'], intents=intent)
     client.load("src.extensions.command_extensions")
     client.load("src.extensions.component_extensions")
-
+    client.load("src.extensions.modal_extensions")
     # @client.command(
     #     name="start",
     #     description="start the interaction, which will tell the bot to message the user privately",
