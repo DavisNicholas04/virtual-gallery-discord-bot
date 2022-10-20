@@ -6,10 +6,13 @@ class Modals(interactions.Extension):
     def __init__(self, client):
         self.client: interactions.Client = client
 
-        @interactions.extension_modal("survey")
-        async def change_genre(ctx: interactions.CommandContext, input1, input2, input3, input4):
-            logs = await interactions.get(client, interactions.Channel, object_id=int(os.environ["LOGS_CHANNEL"]))
-            await logs.send(f"""            
+        @self.client.modal("survey")
+        async def post_survey(ctx: interactions.CommandContext, input0, input1, input2, input3, input4):
+            logs = await interactions.get(self.client, interactions.Channel, object_id=int(os.environ["LOGS_CHANNEL"]))
+            await logs.send(f""" 
+            ---Survey Results---
+            Username.
+            **{input0}**           
             Did you enjoy your experience with us today?
             **{input1}**
             If no, why not?
