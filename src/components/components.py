@@ -110,9 +110,10 @@ username_prompt = interactions.TextInput(
     label="username (if you would like a follow-up)",
     style=interactions.TextStyleType.SHORT,
     placeholder="username",
-    default="anonymous",
     max_length=32,
-    custom_id="input1"
+    custom_id="input0",
+    required=False
+
 )
 
 experience_prompt = interactions.TextInput(
