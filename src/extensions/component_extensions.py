@@ -2,6 +2,7 @@ import interactions
 import src.components.components as cpnts
 import threading
 import src.service.component_service as component_service
+from src.utils.utils import edit, delete
 
 
 class Components(interactions.Extension):
@@ -13,9 +14,15 @@ class Components(interactions.Extension):
         async def select_menu_response(ctx: interactions.ComponentContext, selection):
             new_options_buttons = cpnts.enabled_button_group
             await ctx.message.delete()
-            await ctx.send(f"You selected {selection[0]}. Great choice!")
-            await ctx.send("**you have a few options. select the one that interests you.**",
-                           components=new_options_buttons)
+            await delete(
+                await ctx.send(f"You selected {selection[0]}. Great choice!"),
+                delay=5400
+            )
+            await delete(
+                await ctx.send("**you have a few options. select the one that interests you.**",
+                               components=new_options_buttons),
+                delay=5400
+            )
             await cs.roll(ctx, selection)
 
         @self.client.component("reroll")
@@ -28,9 +35,14 @@ class Components(interactions.Extension):
             cs.reroll_button_ids_dict.pop(f"{ctx.user}-{0}")
             cs.reroll_button_ids_dict.pop(f"{ctx.user}-{1}")
             await cs.roll(ctx, selection)
-            threading.Thread(
-                target=await component_service.send_edited_button(ctx, cpnts.success_button_group)
+            await edit(
+                ctx,
+                components=cpnts.success_button_group,
+                delay=4
             )
+            # threading.Thread(
+            #     target=await component_service.send_edited_button(ctx, cpnts.success_button_group)
+            # )
 
         @self.client.component("change_genre")
         async def change_genre(ctx: interactions.ComponentContext):

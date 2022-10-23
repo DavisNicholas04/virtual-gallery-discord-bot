@@ -1,5 +1,8 @@
+import asyncio
 import random
 
+import interactions
+from typing import Optional
 
 def get_title(genre, index):
     """
@@ -78,3 +81,25 @@ def gen_two_rand_resources(genre):
     index2 = random.choice([i for i in range(0, mdo_len) if i not in [index1]])
     resources: [] = genre[index1], genre[index2]
     return resources
+
+
+async def delete(msg: interactions.Message, delay: Optional[float] = None) -> None:
+    if delay is not None:
+        async def delete_msg(delay_by: float):
+            await asyncio.sleep(delay_by)
+            await msg.delete()
+
+        asyncio.create_task(delete_msg(delay))
+    else:
+        await msg.delete()
+
+
+async def edit(ctx: interactions.ComponentContext, msg: str = None, components=None, delay: Optional[float] = None) -> None:
+    if delay is not None:
+        async def edit_msg(delay_by: float):
+            await asyncio.sleep(delay_by)
+            await ctx.edit(msg, components=components)
+
+        asyncio.create_task(edit_msg(delay))
+    else:
+        await ctx.edit(msg, components=components)

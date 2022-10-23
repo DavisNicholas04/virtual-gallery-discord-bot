@@ -8,12 +8,6 @@ website_button = interactions.Button(
     url="https://cs.oswego.edu/~acascen/coursework/Virtual%20Gallery.HTML"
 )
 
-end_interaction_button = interactions.Button(
-    style=interactions.ButtonStyle.DANGER,
-    label=f"END SESSION",
-    custom_id="end"
-)
-
 
 def create_roll_buttons(entity, second_button_label):
     button = interactions.Button(
@@ -51,15 +45,35 @@ success_rr_button = interactions.Button(
     custom_id="reroll"
 )
 
-change_genre_button = interactions.Button(
+original_cg_button = interactions.Button(
     style=interactions.ButtonStyle.SECONDARY,  # change genre button
     label="change genre",
     custom_id="change_genre"
 )
 
-enabled_button_group = [original_rr_button, change_genre_button, end_interaction_button]
-disabled_button_group = [disabled_rr_button, change_genre_button, end_interaction_button]
-success_button_group = [success_rr_button, change_genre_button, end_interaction_button]
+disabled_cg_button = interactions.Button(
+    style=interactions.ButtonStyle.SECONDARY,  # disabled change genre button
+    label="change genre",
+    custom_id="change_genre",
+    disabled=True
+)
+
+original_ei_button = interactions.Button(  # end interaction button
+    style=interactions.ButtonStyle.DANGER,
+    label=f"END SESSION",
+    custom_id="end"
+)
+
+disabled_ei_button = interactions.Button(
+    style=interactions.ButtonStyle.DANGER,  # disabled end interaction button
+    label=f"END SESSION",
+    custom_id="end",
+    disabled=True
+)
+
+enabled_button_group = [original_rr_button, original_cg_button, original_ei_button]
+disabled_button_group = [disabled_rr_button, disabled_cg_button, disabled_ei_button]
+success_button_group = [success_rr_button, original_cg_button, original_ei_button]
 # /------------------------E-N-D-\
 # | re-roll buttons              |
 # \------------------------------/

@@ -3,7 +3,7 @@ import time
 import interactions
 from src.service.github_service import get_resource_from_github, get_two_recourses
 import src.components.components as cpnts
-
+from src.utils.utils import delete
 
 class ComponentService(interactions.Extension):
     def __init__(self, client, reroll_button_ids_dict: {}):
@@ -22,7 +22,7 @@ class ComponentService(interactions.Extension):
 
         for i, entity in enumerate(resources):
             rolls = cpnts.create_roll_buttons(entity, second_button_label)
-            self.reroll_button_ids_dict[f"{ctx.user}-{i}"] = \
+            msg = \
                 await ctx.user.send(
                     f"Title:  {entity['title']}\n"
                     f"Date:  {entity['date']}\n"
@@ -30,6 +30,8 @@ class ComponentService(interactions.Extension):
                     files=get_image(entity, selection),
                     components=rolls,
                 )
+            self.reroll_button_ids_dict[f"{ctx.user}-{i}"] = msg
+            await delete(msg, 5400)
 
     async def delete_rolls(self, ctx: interactions.ComponentContext):
         """
@@ -38,17 +40,19 @@ class ComponentService(interactions.Extension):
         :param ctx: component context sent in the previous interactions.Client.component function
         :return: null
         """
-        msg = await ctx.message.get_from_url(
+        await delete(await ctx.message.get_from_url(
             self.reroll_button_ids_dict.get(f"{ctx.user}-{0}").url,
             client=self.client._http
+            )
         )
-        await msg.delete()
+        # await msg.delete()
 
-        msg = await ctx.message.get_from_url(
+        await delete(await ctx.message.get_from_url(
             self.reroll_button_ids_dict.get(f"{ctx.user}-{1}").url,
             client=self.client._http
+            )
         )
-        await msg.delete()
+        # await msg.delete()
 
 
 def get_image(entity, selection):
@@ -59,9 +63,13 @@ def get_image(entity, selection):
 
 
 async def selection_menu(ctx: interactions.ComponentContext):
-    await ctx.user.send(content="select one of the following options", components=cpnts.genre_select)
 
-
-async def send_edited_button(ctx, new_options_buttons2):
-    time.sleep(4)
-    await ctx.message.edit(components=new_options_buttons2)
+    await delete(
+        await ctx.user.send(content="select one of the following options", components=cpnts.genre_select),
+        delay=900
+    )
+#
+#
+# async def send_edited_button(ctx, new_options_buttons2):
+#     time.sleep(4)
+#     await ctx.message.edit(components=new_options_buttons2)
