@@ -4,46 +4,49 @@
     "games_link":"<link to games website>",
     "history":[
        {
-            "title":"string",
-            "description":"string",
-            "date":"dateTime",
+            "title":"The first man in space",
+            "description":"Soviet cosmonaut Yuri Gagarin became the first human to fly in space.",
+            "date":"12 April, 1961",
             "cv_image":"string<location of file in github>",
-            "images":[],
-            "official_link": ""
+            "images":["N4b9c9wY9QbuIT25bpVA-rbLNWIdsDFObV3Qkt8xRY0.jpg"],
+            "official_link": "https://assets.weforum.org/editor/N4b9c9wY9QbuIT25bpVA-rbLNWIdsDFObV3Qkt8xRY0.jpg"
         },
-	{
-            "title":"string",
+    {
+            "title":"The first US space walk",
             "description":"string",
-            "date":"dateTime",
+            "date":"June 3, 1965",
             "cv_image":"string<location of file in github>",
-            "images":[],
-            "official_link": ""
+            "images":["G_Gh6mjBaWo944weinjL5cHeO4oHMxvQ0_UsOPPSA3E.jpg"],
+            "official_link": "https://assets.weforum.org/editor/G_Gh6mjBaWo944weinjL5cHeO4oHMxvQ0_UsOPPSA3E.jpg"
        },
        {
-            "title":"string",
-            "description":"string",
-            "date":"dateTime",
+            "title":"A man on the moon",
+            "description":"Neil Armstrong walks on lunar surface",
+            "date":"20 July, 1969",
             "cv_image":"string<location of file in github>",
-            "images":[],
-            "official_link": ""
+            "images":["oav7gKzpORuC3MFyNcctKQay14OXKJdftls40WoEGpA.jpg"],
+            "official_link": "https://assets.weforum.org/editor/oav7gKzpORuC3MFyNcctKQay14OXKJdftls40WoEGpA.jpg"
         },
         {
-            "title":"string",
-            "description":"string",
-            "date":"dateTime",
+            "title":"Earthrise",
+            "description":"The Apollo 11 astronauts were the first to see the Earth rise over the Moon’s horizon ",
+            "date":"December 24, 1968",	
             "cv_image":"string<location of file in github>",
-            "images":[],
-            "official_link": ""
+            "images":["GozA3aMhr9kabPPKTT5wm0I252wRlrAk0qImatj1-64.jpg"],
+            "official_link": "https://assets.weforum.org/editor/GozA3aMhr9kabPPKTT5wm0I252wRlrAk0qImatj1-64.jpg"
         },
         {
-            "title":"string",
-            "description":"string",
-            "date":"dateTime",
+            "title":"International collaboration in action",
+            "description":"The US Space Shuttle ferried two Russian cosmonauts to the space station.",
+            "date":"July, 1995",
             "cv_image":"string<location of file in github>",
-            "images":[],
-            "official_link": ""
+            "images":["bLacs6tu-8Hc3GS7zGa0EGZ4RXSyk1OhzwYvHZVWA_Q.jpg"],
+            "official_link": "https://assets.weforum.org/editor/bLacs6tu-8Hc3GS7zGa0EGZ4RXSyk1OhzwYvHZVWA_Q.jpg"
         }
     ],
+
+
+
     "anime": [
         {
             "title":"Space Dandy",
