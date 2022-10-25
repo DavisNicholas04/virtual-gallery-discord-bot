@@ -4,20 +4,20 @@
     "games_link":"<link to games website>",
     "history":[
        {
-            "title":"The first man in space",
-            "description":"Soviet cosmonaut Yuri Gagarin became the first human to fly in space.",
+            "title":"Yuri Gagarin: The first man in space",
+            "description":"Soviet cosmonaut Yuri Gagarin became the first human to fly in space. Being the first man to orbit the earth he achieved the Soviet Unions highest honor, Hero of the Soviet Union. His total orbit time was 1 hour 29 minutes at a maximum altitude of 187 miles (301 km)",
             "date":"12 April, 1961",
-            "cv_image":"string<location of file in github>",
-            "images":["N4b9c9wY9QbuIT25bpVA-rbLNWIdsDFObV3Qkt8xRY0.jpg"],
-            "official_link": "https://assets.weforum.org/editor/N4b9c9wY9QbuIT25bpVA-rbLNWIdsDFObV3Qkt8xRY0.jpg"
+            "cv_image":"yuriGagarin.jpg",
+            "images":[],
+            "official_link": "https://www.nasa.gov/mission_pages/shuttle/sts1/gagarin_anniversary.html"
         },
     {
-            "title":"The first US space walk",
-            "description":"string",
+            "title":"Ed White: The first US space walk",
+            "description":"Gemini 4 mission, a house hold name by all accounts, marks a special day in American history. Ed White, at 3:45 p.m. EDT, became the first American to conduct a spacewalk which he found so exiting that he didn't return to the spacecraft at his allotted time and had to be ordered back.",
             "date":"June 3, 1965",
-            "cv_image":"string<location of file in github>",
-            "images":["G_Gh6mjBaWo944weinjL5cHeO4oHMxvQ0_UsOPPSA3E.jpg"],
-            "official_link": "https://assets.weforum.org/editor/G_Gh6mjBaWo944weinjL5cHeO4oHMxvQ0_UsOPPSA3E.jpg"
+            "cv_image":"spaceWalk.jpg",
+            "images":[],
+            "official_link": "https://www.nasa.gov/multimedia/imagegallery/image_feature_1098.html"
        },
        {
             "title":"A man on the moon",
