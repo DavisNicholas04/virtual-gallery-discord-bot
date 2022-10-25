@@ -10,9 +10,9 @@ This virtual gallery discord bot allows users to interact with art from a galler
    1. You can click [this link](https://discord.com/register) to get sign up.
 2. Log in and join our server.
    1. You can click [this link](https://discord.gg/TKSTETm3uK) to join our sever.
-3. You will immediately be brought to the `virtual-gallery` channel where you can start your interaction
+3. You will immediately be brought to the `#virtual-gallery` channel where you can start your interaction
    1. Start the interaction by typing `/start` and a private message will be sent to you (all interactions other than `/start` take place in your private messages). The bot will guide you through the rest
-4. When you are done, feel free to stop by the `general` channel and talk us and other members.
+4. When you are done, feel free to stop by the `#general` channel and talk us and other members.
 
 ## Bot Vocabulary
 - Go to website - This will redirect you to the homepage of our website.
