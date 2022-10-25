@@ -55,7 +55,7 @@
             "cv_image":"spaceDandy.jpg",
             "images": [],
             "genre":"comedy, Sci-Fi",
-            "official_link": ""
+            "official_link": "https://www.rightstufanime.com/Space-Dandy-Complete-Series-Classics-Blu-ray"
         },
         {
             "title":"Planetes",
@@ -64,7 +64,7 @@
             "cv_image":"planetes.jpg",
             "images": [],
             "genre":"Drama, Romance, Sci-Fi",
-             "official_link": ""
+             "official_link": "https://www.animecastle.com/planetes-dvd-01-used/"
         },
 	{
 	    "title":"Kanata no Astra",
@@ -73,7 +73,7 @@
             "cv_image":"Astra Lost in Space.jpg",
             "images":[],
             "genre":"Adventure, Mystery, Sci-Fi",
-            "official_link": ""
+            "official_link": "https://www.rightstufanime.com/Astra-Lost-in-Space-Blu-ray"
         },
         {
 	    "title":"Cowboy Bebop",
@@ -82,7 +82,7 @@
             "cv_image":"Cowboy Bebop.jpg",
             "images":[],
             "genre":" Action, Sci-Fi",
-            "official_link": ""
+            "official_link": "https://www.rightstufanime.com/Cowboy-Bebop-Blu-ray-Complete-Series-Hyb"
          },
          {
 	    "title":"Sidonia no Kishi",
@@ -91,7 +91,7 @@
             "cv_image":"Sidonia no Kishi.jpg",
             "images":[],
             "genre":"Action, Sci-Fi",
-             "official_link": ""
+             "official_link": "https://www.rightstufanime.com/Knights-of-Sidonia-Blu-ray"
          },
          {
 	    "title":"Kakumeiki Valvrave",
@@ -100,7 +100,7 @@
             "cv_image":"Kakumeiki Valvrave.jpg",
             "images":[],
             "genre":" Action, Sci-Fi",
-             "official_link": ""
+             "official_link": "https://solarisjapan.com/products/valvrave-the-liberator-vol-1-blu-ray-dvd-cd-limited-edition"
          }
     ],
     "game": [
