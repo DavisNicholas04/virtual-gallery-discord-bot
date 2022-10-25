@@ -147,3 +147,81 @@ nav ul li a:hover {
   border-radius: 50px;
   background-color: lightgreen;
 }
+
+/* Timeline for History page */
+
+.main-container {
+  position: relative;
+  width: 500px;
+}
+
+/*creating line for timeline*/
+.main-container::after {
+  content: '';
+  position: absolute;
+  width: 10px;
+  background-color: rgb(63, 67, 120);
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -3px;
+}
+
+/*Adjusting box of all content*/
+.text-wrapper {
+  padding: 10px 40px;
+  position: relative;
+  width: 51%;
+  box-sizing: border-box;
+  margin: 50px 0;
+}
+
+.text-wrapper::after {
+  content: '';
+  position: absolute;
+  width: 30px;
+  height: 25px;
+  right: -16px;
+  background-color: white;
+  border: 4px solid #07049c;
+  top: 15px;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+/*for left events*/
+.left {
+  left: 0;
+}
+
+/*for right events*/
+.right {
+  left: 50%;
+}
+
+.right::after {
+  left: -10px;
+}
+
+/*content box colour padding and radius for circular corner*/
+.content {
+  padding: 15px 15px 15px 17px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 4px;
+}
+
+/*setting text property of event heading*/
+.content h3 {
+  text-transform: uppercase;
+  font-size: 18px;
+  color: blueviolet;
+  letter-spacing: 1px;
+}
+
+/*setting text property of event content*/
+.content p {
+  color: red;
+  font-weight: 300;
+  font-size: 14px;
+  margin-top: 2px;
+}
