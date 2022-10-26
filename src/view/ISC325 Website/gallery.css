@@ -1,21 +1,21 @@
-body{
-	background-image: url(outerspace.jpg); 
-	background-size: cover;
+body {
+  background-image: url(outerspace.jpg);
+  background-size: cover;
   background-position: center;
   background-attachment: fixed;
 }
 
-#Games{
-	color: darkblue;
+#Games {
+  color: darkblue;
 }
 
 p.red {
-  color:red;
+  color: red;
   font-weight: bold;
 }
 
-.space { 
-  margin-top: 200px; 
+.space {
+  margin-top: 200px;
 }
 
 .center {
@@ -25,40 +25,41 @@ p.red {
   width: 50%;
 }
 
-
-h1{
-	color:blueviolet;
-	text-align: center;
-	font-family: 'Trebuchet MS', sans-serif;;
+h1 {
+  color: blueviolet;
+  text-align: center;
+  font-family: 'Trebuchet MS', sans-serif;
+  ;
 }
 
-p{
-	color:rgb(243, 243, 243);
-	Font-family: 'Trebuchet MS', sans-serif;;
+p {
+  color: rgb(243, 243, 243);
+  Font-family: 'Trebuchet MS', sans-serif;
+  ;
 }
 
-h2{
-	color: blueviolet;
-	text-align: center;
+h2 {
+  color: blueviolet;
+  text-align: center;
 }
 
- nav {
-    width:100%;
+nav {
+  width: 100%;
 }
 
-nav ul{
+nav ul {
   font-size: 1.4em;
   color: white;
-  margin:auto;
+  margin: auto;
   text-align: center;
-  padding:30px;
+  padding: 30px;
   border-top: 1px solid #1C1B1A;
-  background-color: rgb(63,67,120);
+  background-color: rgb(63, 67, 120);
 
 }
 
-nav ul li{
-  width:100%;
+nav ul li {
+  width: 100%;
   display: inline;
   text-decoration: none;
   margin: auto;
@@ -66,13 +67,18 @@ nav ul li{
 
 nav ul li a {
   text-decoration: none;
-  color:white;
-  padding:30px;
+  color: white;
+  padding: 30px;
 
 }
 
 nav ul li a:hover {
   background: #20234B;
+}
+
+nav ul li a.active {
+  background: #11154e;
+  color: rgb(0, 0, 0);
 }
 
 .column {
@@ -111,27 +117,28 @@ nav ul li a:hover {
   padding: 0px;
   position: relative;
 }
-#slide-1:target ~ .image-container {
+
+#slide-1:target~.image-container {
   left: 0px;
 }
 
-#slide-2:target ~ .image-container {
+#slide-2:target~.image-container {
   left: -500px;
 }
 
-#slide-3:target ~ .image-container {
+#slide-3:target~.image-container {
   left: -1000px;
 }
 
-#slide-4:target ~ .image-container {
+#slide-4:target~.image-container {
   left: 0px;
 }
 
-#slide-5:target ~ .image-container {
+#slide-5:target~.image-container {
   left: -500px;
 }
 
-#slide-6:target ~ .image-container {
+#slide-6:target~.image-container {
   left: -1000px;
 }
 
@@ -152,7 +159,7 @@ nav ul li a:hover {
 
 .main-container {
   position: relative;
-  width: 500px;
+  width: 50vw;
 }
 
 /*creating line for timeline*/
@@ -163,15 +170,15 @@ nav ul li a:hover {
   background-color: rgb(63, 67, 120);
   top: 0;
   bottom: 0;
-  left: 50%;
-  margin-left: -3px;
+  left: 50vw;
+  margin: auto;
 }
 
 /*Adjusting box of all content*/
 .text-wrapper {
-  padding: 10px 40px;
+  padding: 10px 40px; 
   position: relative;
-  width: 51%;
+  width: 500px;
   box-sizing: border-box;
   margin: 50px 0;
 }
@@ -191,12 +198,12 @@ nav ul li a:hover {
 
 /*for left events*/
 .left {
-  left: 0;
+  left: 25vw;
 }
 
 /*for right events*/
 .right {
-  left: 50%;
+  left: 50vw;
 }
 
 .right::after {
@@ -225,3 +232,9 @@ nav ul li a:hover {
   font-size: 14px;
   margin-top: 2px;
 }
+
+/* * {
+  background: #000 !important;
+  color: #0f0 !important;
+  outline: solid #f00 1px !important;
+} */
