@@ -21,7 +21,7 @@ class ComponentService(interactions.Extension):
         self.reroll_button_ids_dict[f"{ctx.user}-selection"] = selection
 
         for i, entity in enumerate(resources):
-            rolls = cpnts.create_roll_buttons(entity, second_button_label)
+            rolls = cpnts.create_roll_buttons(entity, second_button_label, selection[0])
             msg = \
                 await ctx.user.send(
                     f"Title:  {entity['title']}\n"

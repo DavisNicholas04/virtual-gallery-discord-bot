@@ -1,4 +1,5 @@
 import os
+import re
 
 import interactions
 
@@ -12,18 +13,22 @@ website_button = interactions.Button(
 
 
 def create_roll_buttons(entity, second_button_label, selection):
-    url = os.environ["WEBSITE_ERROR"]
+    print(selection)
     if selection == "game":
         url = os.environ['WEBSITE_GAME']
-    if selection == "history":
+    elif selection == "history":
         url = os.environ['WEBSITE_HISTORY']
-    if selection == "anime":
+    elif selection == "anime":
         url = os.environ['WEBSITE_ANIME']
+    else:
+        url = os.environ["WEBSITE_ERROR"]
+
+    title = re.sub('[\W_]+', '', entity['title'])
 
     button = interactions.Button(
         style=interactions.ButtonStyle.LINK,
         label=f"I'm interested in {entity['title'].split()[:15]}",
-        url=url+entity
+        url=url + "#" + title
     )
     button2 = interactions.Button(
         style=interactions.ButtonStyle.LINK,
@@ -31,6 +36,8 @@ def create_roll_buttons(entity, second_button_label, selection):
         url=entity["official_link"]
     )
     return [button, button2]
+
+
 # /-S-T-A-R-T--------------------\
 # | re-roll buttons              |
 # \------------------------------/
