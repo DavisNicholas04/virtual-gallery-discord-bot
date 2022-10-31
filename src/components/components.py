@@ -1,3 +1,5 @@
+import os
+
 import interactions
 
 # BUTTONS
@@ -5,15 +7,23 @@ import interactions
 website_button = interactions.Button(
     style=interactions.ButtonStyle.LINK,
     label="go to website",
-    url="https://cs.oswego.edu/~acascen/coursework/Virtual%20Gallery.HTML"
+    url=os.environ['WEBSITE_HOME']
 )
 
 
-def create_roll_buttons(entity, second_button_label):
+def create_roll_buttons(entity, second_button_label, selection):
+    url = os.environ["WEBSITE_ERROR"]
+    if selection == "game":
+        url = os.environ['WEBSITE_GAME']
+    if selection == "history":
+        url = os.environ['WEBSITE_HISTORY']
+    if selection == "anime":
+        url = os.environ['WEBSITE_ANIME']
+
     button = interactions.Button(
         style=interactions.ButtonStyle.LINK,
         label=f"I'm interested in {entity['title'].split()[:15]}",
-        url="https://www.cs.oswego.edu/~acascen/coursework/Virtual%20Gallery.HTML"
+        url=url+entity
     )
     button2 = interactions.Button(
         style=interactions.ButtonStyle.LINK,
