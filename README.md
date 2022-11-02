@@ -1,13 +1,13 @@
 # virtual-gallery-discord-bot
 
 ## Purpose
-to bring an easy and immersive experience to those wanting to explore art everywhere.
+To bring an easy and immersive experience to those wanting to explore art everywhere.
 
 This virtual gallery discord bot allows users to interact with art from a gallery through one of the most popular VoIP and instant messaging social platform, discord. With this you can use the all the bots features by making a single discord account. 
 
 ## Getting Started
 1. Make a discord account.
-   1. You can click [this link](https://discord.com/register) to get sign up.
+   1. You can click [this link](https://discord.com/register) to get signed up.
 2. Log in and join our server.
    1. You can click [this link](https://discord.gg/TKSTETm3uK) to join our sever.
 3. You will immediately be brought to the `#virtual-gallery` channel where you can start your interaction
