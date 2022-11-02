@@ -12,6 +12,7 @@ body {
 p.red {
     color: red;
     font-weight: bold;
+    text-shadow: 0 0 0;
 }
 
 .space {
@@ -34,6 +35,11 @@ h1 {
 p {
     color: rgb(243, 243, 243);
     Font-family: 'Trebuchet MS', sans-serif;;
+    text-shadow: #0a0d29 2px 2px 3px;
+}
+
+.main-container p {
+    text-shadow: 0 0 0;
 }
 
 h2 {

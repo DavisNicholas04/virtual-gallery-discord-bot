@@ -232,5 +232,9 @@ nav ul li a:hover {
 h3 {
     color: white;
     text-align: center;
-    font-family: 'Trebuchet MS', sans-serif;;
+    font-family: 'Trebuchet MS', sans-serif;
+    text-shadow: #0a0d29 2px 2px 3px;
+}
+h3 a {
+    text-shadow: #212256 1px 1px 8px;
 }
