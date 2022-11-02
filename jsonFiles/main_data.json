@@ -1,166 +1,166 @@
 {
-    "history_link":"<link to history website>",
-    "anime_link":"<link to anime website>",
-    "games_link":"<link to games website>",
-    "history":[
-                   {
-            "title":"Crossing the karman line",
-            "description":"During the end years of WW2, Nazi Germany developed the V-2 Rocket, which its intended purpose was to bomb Allied cities, it become the first artificial object to cross what would later be defined the Kármán line, which made it the first spaceflight in history.",
-            "date":"June 20, 1944",
-            "cv_image":"space2.jpg",
-            "images":[],
-            "official_link": "https://en.wikipedia.org/wiki/V-2_rocket"
-        },
-             {
-            "title":"Albert II",
-            "description":"In a captured V-2 Rocket, the United States sent up Albert II, a rhesus monkey, which became the first primate and first mammal in space.",
-            "date":"June 14, 1949",
-            "cv_image":"albert2.jpg",
-            "images":[],
-            "official_link": "https://en.wikipedia.org/wiki/Albert_II_(monkey)"
-        },
-                   {
-            "title":"Laika",
-            "description":"The onset of the Cold War also brought the Space Race, and in 1957 there were a few major accomplishments for the Soviet Union, creating the first ICBM, sending up the first satellite and creating the first man-made signals from space. They even sent up a dog named Laika, who became the first mammal in orbit.",
-            "date":"November 3, 1957",
-            "cv_image":"laika.jpg",
-            "images":[],
-            "official_link": "https://en.wikipedia.org/wiki/Laika"
-        },
-       {
-            "title":"Yuri Gagarin: The first man in space",
-            "description":"Soviet cosmonaut Yuri Gagarin became the first human to fly in space. Being the first man to orbit the earth he achieved the Soviet Unions highest honor, Hero of the Soviet Union. His total orbit time was 1 hour 29 minutes at a maximum altitude of 187 miles (301 km)",
-            "date":"12 April, 1961",
-            "cv_image":"yuriGagarin.jpg",
-            "images":[],
-            "official_link": "https://www.nasa.gov/mission_pages/shuttle/sts1/gagarin_anniversary.html"
-        },
+  "history_link": "<link to history website>",
+  "anime_link": "<link to anime website>",
+  "games_link": "<link to games website>",
+  "history": [
     {
-            "title":"Ed White: The first US space walk",
-            "description":"Gemini 4 mission, a house hold name by all accounts, marks a special day in American history. Ed White, at 3:45 p.m. EDT, became the first American to conduct a spacewalk which he found so exiting that he didn't return to the spacecraft at his allotted time and had to be ordered back.",
-            "date":"June 3, 1965",
-            "cv_image":"firstspacewalk.jpg",
-            "images":[],
-            "official_link": "https://www.nasa.gov/multimedia/imagegallery/image_feature_1098.html"
-       },
-      {
-            "title":"1968-1969",
-            "description":"In 1968, Apollo 8 became the first human-crewed orbital mission to another world (Moon), the 3 crew onboard were the first to personally witness the dark side of the Moon and an Earthrise. In 1969, perhaps the most famous space event in history, the first humans set foot onto the Moon's surface in the mission Apollo 11, making Neil Armstrong and Buzz Aldrin some of the most important people in hsitory, especially in space exploration. This mission also became the first space launch from another celestial body other than Earth, along with the first sample return from the Moon.",
-            "date":"1968-1969",
-            "cv_image":"space3.jpg",
-            "images":[],
-            "official_link": "https://en.wikipedia.org/wiki/Apollo_11"
-       },
-          {
-            "title":"Double Asteroid Redirection Test",
-            "description":"One of the most recent events regarding space travel as of October 25th 2022, is the recent DART mission, which was the first attempt to deflect an asteroid, along with the first spacescraft to impact an asteroid moon (Dimorphos)",
-            "date":"October 25 2022",
-            "cv_image":"firstspacewalk.jpg",
-            "images":[],
-            "official_link": "https://www.nasa.gov/multimedia/imagegallery/image_feature_1098.html"
-       }
-    ],
-    "anime": [
-        {
-            "title":"Space Dandy",
-            "description":"Dandy is a groovy, pompadour-wearing man who explores the stars in search of strange aliens for money, desiring to visit his favorite place: bo****s, the best diner in all the cosmos. Traversing the galaxies in his trusty ship, the Aloha Oe, Dandy is accompanied by his two equally unique friends: QT, the vacuum cleaner robot, and Meow, an alien with a cat-like appearance.",
-            "date":"Jan 5, 2014",
-            "cv_image":"spaceDandy.jpg",
-            "images": [],
-            "genre":"comedy, Sci-Fi",
-            "official_link": "https://www.rightstufanime.com/Space-Dandy-Complete-Series-Classics-Blu-ray"
-        },
-        {
-            "title":"Planetes",
-            "description":"In 2075, space travel is no longer just a dream, but an everyday reality for mankind. Advancements in science and technology have led to the colonization of the moon, the commercialization of outer space, and the formation of large space corporations. Ai Tanabe, an upbeat woman whose interests lie in the cosmos, joins Technora Corporation as a member of their Debris Section, a department dedicated to the removal of dangerous space junk between the orbits of the Earth and Moon",
-            "date":"Oct 4, 2003",
-            "cv_image":"planetes.jpg",
-            "images": [],
-            "genre":"Drama, Romance, Sci-Fi",
-             "official_link": "https://www.animecastle.com/planetes-dvd-01-used/"
-        },
-	{
-	    "title":"Kanata no Astra",
-            "description":"In the year 2063, space travel is feasible andcommercially available",
-            "date":"Jul 3, 2019",
-            "cv_image":"Astra Lost in Space.jpg",
-            "images":[],
-            "genre":"Adventure, Mystery, Sci-Fi",
-            "official_link": "https://www.rightstufanime.com/Astra-Lost-in-Space-Blu-ray"
-        },
-        {
-	    "title":"Cowboy Bebop",
-            "description":"Crime is timeless",
-            "date":"Apr 3, 1998",
-            "cv_image":"Cowboy Bebop.jpg",
-            "images":[],
-            "genre":" Action, Sci-Fi",
-            "official_link": "https://www.rightstufanime.com/Cowboy-Bebop-Blu-ray-Complete-Series-Hyb"
-         },
-         {
-	    "title":"Sidonia no Kishi",
-            "description":"After destroying Earth many years ago, the alien race Gauna has been pursuing the remnants of humanity",
-            "date":"Apr 11, 2014",
-            "cv_image":"Sidonia no Kishi.jpg",
-            "images":[],
-            "genre":"Action, Sci-Fi",
-             "official_link": "https://www.rightstufanime.com/Knights-of-Sidonia-Blu-ray"
-         },
-         {
-	    "title":"Kakumeiki Valvrave",
-            "description":"In the 71st year of the True Era, humans have successfully expanded into space and have started living in independent galactic colonies.",
-            "date":"Apr 12, 2013",
-            "cv_image":"Kakumeiki Valvrave.jpg",
-            "images":[],
-            "genre":" Action, Sci-Fi",
-             "official_link": "https://solarisjapan.com/products/valvrave-the-liberator-vol-1-blu-ray-dvd-cd-limited-edition"
-         }
-    ],
-    "game": [
-        {
-            "title":"Kerbal Space Program",
-            "description":"Although KSP looks like a very cartoony space game, it actually bases most if not all of its mechanics on real life physics, like having to calculate transfer windows and using gravity assists to save on fuel.",
-            "date":"Apr 27, 2015",
-            "cv_image":"KSP.jpg",
-            "images": [],
-            "genre":"Space, Simulation, Physics",
-            "official_link": "https://store.steampowered.com/app/220200/Kerbal_Space_Program/"
-        },
-	    {
-            "title":"Space Engine",
-            "description":"SpaceEngine is 1:1 science-based Universe simulator, users can explore any part of our charted universe, along with procedurally generated parts that haven’t been charted yet. This game is fairly realistic with it’s physics and graphics, although you are able to surpass to speed of light by many times to explore places far out beyond our Milky Way.",
-            "date":"Jun 11, 2019",
-            "cv_image":"SE.jpg",
-            "images": [],
-            "genre":"Space, Sandbox, Casual",
-             "official_link": "https://store.steampowered.com/app/314650/SpaceEngine/"
-        },
-        {
-            "title":"Terra Invicta",
-            "description":"Terra Invicta is a game where an alien invasion has fractured humanity into several ideological factions, you are chosen to lead one of these factions to take control of Earth’s many nations and expand yourself across the solar system. This game portrays space fairly accurately, having specific transfer windows to save on fuel and time, you also set up many mining bases across the Solar System’s planets, moons and asteroids to build up resources to help the aliens, or to build warships to fight back against the aliens and their allies.",
-            "date":"Sep 26, 2022",
-            "cv_image":"TI.jpg",
-            "images": [],
-            "genre":"Strategy, Space, Simulation",
-             "official_link": "https://store.steampowered.com/app/1176470/Terra_Invicta/"
-        },
-        {
-            "title":"Hardspace: Shipbreaker",
-            "description":"Hardspace: Shipbreaker takes place in the dystopian future, most of the Solar System has been heavily industrialized, and you partake in that by working for the LYNX corporation, which salvages ships and uses the parts for profit. You are working to pay off a billion credit debt owed to LYNX. This game accurately depicts zero g environments, along with a possible future for humanity if corporations begin having much more power in space and our society.",
-            "date":"May 24, 2022",
-            "cv_image":"HS.jpg",
-            "images": [],
-            "genre":"Space, Sci-fi, Physics",
-             "official_link": "https://store.steampowered.com/app/1161580/Hardspace_Shipbreaker/"
-        },
-        {
-            "title":"Reentry - An Orbital Simulator",
-            "description":"Reentry is a realistic space flight simulator based on NASAs space programs, become an astronaut and take part in programs from Project Mercury to the moon landing in Project Apollo. In this game you play as the astronaut controlling the spacecraft, learning how to fly and operate them like a real astronaut would. ",
-            "date":"Nov 15, 2018",
-            "cv_image":"Reentry.jpg",
-            "images": [],
-            "genre":"Space, Flight, Simulation",
-             "official_link": "https://store.steampowered.com/app/882140/Reentry__An_Orbital_Simulator/"
-        }
-    ]
+      "title": "Crossing the karman line",
+      "description": "During the end years of WW2, Nazi Germany developed the V-2 Rocket, which its intended purpose was to bomb Allied cities, it become the first artificial object to cross what would later be defined the Kármán line, which made it the first spaceflight in history.",
+      "date": "June 20, 1944",
+      "cv_image": "space2.jpg",
+      "images": [],
+      "official_link": "https://en.wikipedia.org/wiki/V-2_rocket"
+    },
+    {
+      "title": "Albert II",
+      "description": "In a captured V-2 Rocket, the United States sent up Albert II, a rhesus monkey, which became the first primate and first mammal in space.",
+      "date": "June 14, 1949",
+      "cv_image": "albert2.jpg",
+      "images": [],
+      "official_link": "https://en.wikipedia.org/wiki/Albert_II_(monkey)"
+    },
+    {
+      "title": "Laika",
+      "description": "The onset of the Cold War also brought the Space Race, and in 1957 there were a few major accomplishments for the Soviet Union, creating the first ICBM, sending up the first satellite and creating the first man-made signals from space. They even sent up a dog named Laika, who became the first mammal in orbit.",
+      "date": "November 3, 1957",
+      "cv_image": "laika.jpg",
+      "images": [],
+      "official_link": "https://en.wikipedia.org/wiki/Laika"
+    },
+    {
+      "title": "Yuri Gagarin: The first man in space",
+      "description": "Soviet cosmonaut Yuri Gagarin became the first human to fly in space. Being the first man to orbit the earth he achieved the Soviet Unions highest honor, Hero of the Soviet Union. His total orbit time was 1 hour 29 minutes at a maximum altitude of 187 miles (301 km)",
+      "date": "12 April, 1961",
+      "cv_image": "yuriGagarin.jpg",
+      "images": [],
+      "official_link": "https://www.nasa.gov/mission_pages/shuttle/sts1/gagarin_anniversary.html"
+    },
+    {
+      "title": "Ed White: The first US space walk",
+      "description": "Gemini 4 mission, a house hold name by all accounts, marks a special day in American history. Ed White, at 3:45 p.m. EDT, became the first American to conduct a spacewalk which he found so exiting that he didn't return to the spacecraft at his allotted time and had to be ordered back.",
+      "date": "June 3, 1965",
+      "cv_image": "firstspacewalk.jpg",
+      "images": [],
+      "official_link": "https://www.nasa.gov/multimedia/imagegallery/image_feature_1098.html"
+    },
+    {
+      "title": "1968-1969",
+      "description": "In 1968, Apollo 8 became the first human-crewed orbital mission to another world (Moon), the 3 crew onboard were the first to personally witness the dark side of the Moon and an Earthrise. In 1969, perhaps the most famous space event in history, the first humans set foot onto the Moon's surface in the mission Apollo 11, making Neil Armstrong and Buzz Aldrin some of the most important people in hsitory, especially in space exploration. This mission also became the first space launch from another celestial body other than Earth, along with the first sample return from the Moon.",
+      "date": "1968-1969",
+      "cv_image": "space3.jpg",
+      "images": [],
+      "official_link": "https://en.wikipedia.org/wiki/Apollo_11"
+    },
+    {
+      "title": "Double Asteroid Redirection Test",
+      "description": "One of the most recent events regarding space travel as of October 25th 2022, is the recent DART mission, which was the first attempt to deflect an asteroid, along with the first spacescraft to impact an asteroid moon (Dimorphos)",
+      "date": "October 25 2022",
+      "cv_image": "firstspacewalk.jpg",
+      "images": [],
+      "official_link": "https://www.nasa.gov/multimedia/imagegallery/image_feature_1098.html"
+    }
+  ],
+  "anime": [
+    {
+      "title": "Space Dandy",
+      "description": "Dandy is a groovy, pompadour-wearing man who explores the stars in search of strange aliens for money, desiring to visit his favorite place: bo****s, the best diner in all the cosmos. Traversing the galaxies in his trusty ship, the Aloha Oe, Dandy is accompanied by his two equally unique friends: QT, the vacuum cleaner robot, and Meow, an alien with a cat-like appearance.",
+      "date": "Jan 5, 2014",
+      "cv_image": "spaceDandy.jpg",
+      "images": [],
+      "genre": "comedy, Sci-Fi",
+      "official_link": "https://www.rightstufanime.com/Space-Dandy-Complete-Series-Classics-Blu-ray"
+    },
+    {
+      "title": "Planetes",
+      "description": "In 2075, space travel is no longer just a dream, but an everyday reality for mankind. Advancements in science and technology have led to the colonization of the moon, the commercialization of outer space, and the formation of large space corporations. Ai Tanabe, an upbeat woman whose interests lie in the cosmos, joins Technora Corporation as a member of their Debris Section, a department dedicated to the removal of dangerous space junk between the orbits of the Earth and Moon",
+      "date": "Oct 4, 2003",
+      "cv_image": "planetes.jpg",
+      "images": [],
+      "genre": "Drama, Romance, Sci-Fi",
+      "official_link": "https://www.animecastle.com/planetes-dvd-01-used/"
+    },
+    {
+      "title": "Kanata no Astra",
+      "description": "In the year 2063, space travel is feasible andcommercially available",
+      "date": "Jul 3, 2019",
+      "cv_image": "Astra Lost in Space.jpg",
+      "images": [],
+      "genre": "Adventure, Mystery, Sci-Fi",
+      "official_link": "https://www.rightstufanime.com/Astra-Lost-in-Space-Blu-ray"
+    },
+    {
+      "title": "Cowboy Bebop",
+      "description": "Crime is timeless",
+      "date": "Apr 3, 1998",
+      "cv_image": "Cowboy Bebop.jpg",
+      "images": [],
+      "genre": " Action, Sci-Fi",
+      "official_link": "https://www.rightstufanime.com/Cowboy-Bebop-Blu-ray-Complete-Series-Hyb"
+    },
+    {
+      "title": "Sidonia no Kishi",
+      "description": "After destroying Earth many years ago, the alien race Gauna has been pursuing the remnants of humanity",
+      "date": "Apr 11, 2014",
+      "cv_image": "Sidonia no Kishi.jpg",
+      "images": [],
+      "genre": "Action, Sci-Fi",
+      "official_link": "https://www.rightstufanime.com/Knights-of-Sidonia-Blu-ray"
+    },
+    {
+      "title": "Kakumeiki Valvrave",
+      "description": "In the 71st year of the True Era, humans have successfully expanded into space and have started living in independent galactic colonies.",
+      "date": "Apr 12, 2013",
+      "cv_image": "Kakumeiki Valvrave.jpg",
+      "images": [],
+      "genre": " Action, Sci-Fi",
+      "official_link": "https://solarisjapan.com/products/valvrave-the-liberator-vol-1-blu-ray-dvd-cd-limited-edition"
+    }
+  ],
+  "game": [
+    {
+      "title": "Kerbal Space Program",
+      "description": "Although KSP looks like a very cartoony space game, it actually bases most if not all of its mechanics on real life physics, like having to calculate transfer windows and using gravity assists to save on fuel.",
+      "date": "Apr 27, 2015",
+      "cv_image": "KSP.jpg",
+      "images": [],
+      "genre": "Space, Simulation, Physics",
+      "official_link": "https://store.steampowered.com/app/220200/Kerbal_Space_Program/"
+    },
+    {
+      "title": "Space Engine",
+      "description": "SpaceEngine is 1:1 science-based Universe simulator, users can explore any part of our charted universe, along with procedurally generated parts that haven’t been charted yet. This game is fairly realistic with it’s physics and graphics, although you are able to surpass to speed of light by many times to explore places far out beyond our Milky Way.",
+      "date": "Jun 11, 2019",
+      "cv_image": "SE.jpg",
+      "images": [],
+      "genre": "Space, Sandbox, Casual",
+      "official_link": "https://store.steampowered.com/app/314650/SpaceEngine/"
+    },
+    {
+      "title": "Terra Invicta",
+      "description": "Terra Invicta is a game where an alien invasion has fractured humanity into several ideological factions, you are chosen to lead one of these factions to take control of Earth’s many nations and expand yourself across the solar system. This game portrays space fairly accurately, having specific transfer windows to save on fuel and time, you also set up many mining bases across the Solar System’s planets, moons and asteroids to build up resources to help the aliens, or to build warships to fight back against the aliens and their allies.",
+      "date": "Sep 26, 2022",
+      "cv_image": "TI.jpg",
+      "images": [],
+      "genre": "Strategy, Space, Simulation",
+      "official_link": "https://store.steampowered.com/app/1176470/Terra_Invicta/"
+    },
+    {
+      "title": "Hardspace: Shipbreaker",
+      "description": "Hardspace: Shipbreaker takes place in the dystopian future, most of the Solar System has been heavily industrialized, and you partake in that by working for the LYNX corporation, which salvages ships and uses the parts for profit. You are working to pay off a billion credit debt owed to LYNX. This game accurately depicts zero g environments, along with a possible future for humanity if corporations begin having much more power in space and our society.",
+      "date": "May 24, 2022",
+      "cv_image": "HS.jpg",
+      "images": [],
+      "genre": "Space, Sci-fi, Physics",
+      "official_link": "https://store.steampowered.com/app/1161580/Hardspace_Shipbreaker/"
+    },
+    {
+      "title": "Reentry - An Orbital Simulator",
+      "description": "Reentry is a realistic space flight simulator based on NASAs space programs, become an astronaut and take part in programs from Project Mercury to the moon landing in Project Apollo. In this game you play as the astronaut controlling the spacecraft, learning how to fly and operate them like a real astronaut would. ",
+      "date": "Nov 15, 2018",
+      "cv_image": "Reentry.jpg",
+      "images": [],
+      "genre": "Space, Flight, Simulation",
+      "official_link": "https://store.steampowered.com/app/882140/Reentry__An_Orbital_Simulator/"
+    }
+  ]
 }

@@ -4,6 +4,7 @@ import random
 import interactions
 from typing import Optional
 
+
 def get_title(genre, index):
     """
     helper function to return the title of a resource
@@ -94,7 +95,8 @@ async def delete(msg: interactions.Message, delay: Optional[float] = None) -> No
         await msg.delete()
 
 
-async def edit(ctx: interactions.ComponentContext, msg: str = None, components=None, delay: Optional[float] = None) -> None:
+async def edit(ctx: interactions.ComponentContext, msg: str = None, components=None,
+               delay: Optional[float] = None) -> None:
     if delay is not None:
         async def edit_msg(delay_by: float):
             await asyncio.sleep(delay_by)

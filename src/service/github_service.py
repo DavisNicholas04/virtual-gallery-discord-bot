@@ -18,11 +18,11 @@ def get_resource_from_github(folder, file, return_string=True):
     if response.status_code == 200:
         if return_string:
             backslash = "\\"
-            val = str(response.content)\
-                .removeprefix("b'")\
-                .removesuffix("'")\
-                .replace("\\n", "")\
-                .replace("\\t", "")\
+            val = str(response.content) \
+                .removeprefix("b'") \
+                .removesuffix("'") \
+                .replace("\\n", "") \
+                .replace("\\t", "") \
                 .replace(backslash, "")
             return val
         else:
