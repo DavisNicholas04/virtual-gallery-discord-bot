@@ -1,6 +1,5 @@
 import interactions
 import src.components.components as cpnts
-import threading
 import src.service.component_service as component_service
 from src.utils.utils import edit, delete
 
@@ -40,9 +39,6 @@ class Components(interactions.Extension):
                 components=cpnts.success_button_group,
                 delay=4
             )
-            # threading.Thread(
-            #     target=await component_service.send_edited_button(ctx, cpnts.success_button_group)
-            # )
 
         @self.client.component("change_genre")
         async def change_genre(ctx: interactions.ComponentContext):
