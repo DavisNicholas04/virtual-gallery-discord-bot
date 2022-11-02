@@ -1,5 +1,3 @@
-import time
-
 import interactions
 from src.service.github_service import get_resource_from_github, get_two_recourses
 import src.components.components as cpnts
@@ -46,14 +44,12 @@ class ComponentService(interactions.Extension):
             client=self.client._http
         )
                      )
-        # await msg.delete()
 
         await delete(await ctx.message.get_from_url(
             self.reroll_button_ids_dict.get(f"{ctx.user}-{1}").url,
             client=self.client._http
         )
                      )
-        # await msg.delete()
 
 
 def get_image(entity, selection):
