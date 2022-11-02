@@ -5,6 +5,7 @@ from src.service.github_service import get_resource_from_github, get_two_recours
 import src.components.components as cpnts
 from src.utils.utils import delete
 
+
 class ComponentService(interactions.Extension):
     def __init__(self, client, reroll_button_ids_dict: {}):
         self.client: interactions.Client = client
@@ -43,15 +44,15 @@ class ComponentService(interactions.Extension):
         await delete(await ctx.message.get_from_url(
             self.reroll_button_ids_dict.get(f"{ctx.user}-{0}").url,
             client=self.client._http
-            )
         )
+                     )
         # await msg.delete()
 
         await delete(await ctx.message.get_from_url(
             self.reroll_button_ids_dict.get(f"{ctx.user}-{1}").url,
             client=self.client._http
-            )
         )
+                     )
         # await msg.delete()
 
 
@@ -63,13 +64,7 @@ def get_image(entity, selection):
 
 
 async def selection_menu(ctx: interactions.ComponentContext):
-
     await delete(
         await ctx.user.send(content="select one of the following options", components=cpnts.genre_select),
         delay=900
     )
-#
-#
-# async def send_edited_button(ctx, new_options_buttons2):
-#     time.sleep(4)
-#     await ctx.message.edit(components=new_options_buttons2)
