@@ -13,7 +13,6 @@ website_button = interactions.Button(
 
 
 def create_roll_buttons(entity, second_button_label, selection):
-    print(selection)
     if selection == "games":
         url = os.environ['WEBSITE_GAME']
     elif selection == "history":
@@ -27,7 +26,7 @@ def create_roll_buttons(entity, second_button_label, selection):
 
     button = interactions.Button(
         style=interactions.ButtonStyle.LINK,
-        label=f"I'm interested in {entity['title'].split()[:15]}",
+        label=f"I'm interested in {' '.join(entity['title'].split()[:15])}",
         url=url + "#" + title
     )
     button2 = interactions.Button(
