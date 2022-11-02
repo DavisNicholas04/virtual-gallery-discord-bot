@@ -1,14 +1,13 @@
-# Virtual Gallery Developers
-- [Backend](#Backend)
-- [frontend](#Frontend)
+# Virtual Gallery Developers (BackEnd)
+- [Redirect to frontend readme](https://github.com/DavisNicholas04/virtual-gallery-discord-bot/tree/main/docs#Virtual-Gallery-Developers-(FrontEnd))
 
 ### Notice:
-This application was created as a small-time project and is not considered stable. per-route rate-limits will likely be hit often if used with a medium size audience leading to temporary route-locks. 
-
-## Backend
+This application was created as a small-time project and is not considered stable. per-route rate-limits will likely be hit often if used with a medium size audience leading to temporary route-locks.
 
 ### stack
-
-## Frontend
-
-### stack
+- Python
+- imported libraries
+  - interactions.py (A discord.py wrapper)
+  - requests (An HTTP library)
+- Heroku (Hosting the discord bot & CI/CD)
+- GitHub (database)
