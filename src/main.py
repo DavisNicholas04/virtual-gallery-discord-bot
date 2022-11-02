@@ -1,7 +1,6 @@
 import os
 import interactions
 from dotenv import load_dotenv
-# reroll_button_ids_dict = {}
 
 
 if __name__ == "__main__":
