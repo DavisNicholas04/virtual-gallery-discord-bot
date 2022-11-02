@@ -118,30 +118,6 @@ nav ul li a.active {
   position: relative;
 }
 
-#slide-1:target~.image-container {
-  left: 0px;
-}
-
-#slide-2:target~.image-container {
-  left: -500px;
-}
-
-#slide-3:target~.image-container {
-  left: -1000px;
-}
-
-#slide-4:target~.image-container {
-  left: 0px;
-}
-
-#slide-5:target~.image-container {
-  left: -500px;
-}
-
-#slide-6:target~.image-container {
-  left: -1000px;
-}
-
 .buttons {
   position: relative;
   top: -20px;
@@ -231,6 +207,37 @@ nav ul li a.active {
   font-weight: 300;
   font-size: 14px;
   margin-top: 2px;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+.dot1 {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot1:hover {
+  background-color: #717171;
 }
 
 /* * {
