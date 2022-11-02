@@ -150,14 +150,15 @@ nav ul li a.active {
 
 /*Adjusting box of all content*/
 .text-wrapper {
-    padding: 10px 40px;
+    padding: 2vw 2vw;
     position: relative;
-    width: 500px;
+    width: 30vw;
     box-sizing: border-box;
-    margin: 50px 0;
+    margin: 2vw 0;
+    left: 20vw;
 }
 
-.text-wrapper::after {
+/* .text-wrapper::after {
     content: '';
     position: absolute;
     width: 30px;
@@ -168,21 +169,49 @@ nav ul li a.active {
     top: 15px;
     border-radius: 50%;
     z-index: 1;
+    left: -10px;
+} */
+
+/*Adjusting box of all content*/
+.text-wrapper2 {
+    padding: 2vw 2vw;
+    position: relative;
+    width: 30vw;
+    box-sizing: border-box;
+    /* margin-left: 25vws; */
+    left: 50vw;
 }
+/* 
+.text-wrapper2::before {
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 25px;
+    left: -20px;
+    background-color: white;
+    border: 10px solid #07049c;
+    top: 15px;
+    border-radius: 50%;
+    z-index: 1;
+} */
 
 /*for left events*/
-.left {
+/* .left {
     left: 25vw;
 }
 
+.left::after {
+    right: 2.2vw;
+} */
+
 /*for right events*/
-.right {
+/* .right {
     left: 50vw;
 }
 
 .right::after {
     left: -10px;
-}
+} */
 
 /*content box colour padding and radius for circular corner*/
 .content {
