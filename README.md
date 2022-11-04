@@ -26,3 +26,18 @@ This virtual gallery discord bot allows users to interact with art from a galler
 ## Using this bot with your own dataset
 
 coming soon.
+
+
+## Meet the team
+
+- Project Manager
+  - Nicholas Davis
+
+
+- Backend Development
+  - Nicholas Davis
+
+
+- Frontend Development
+  - Franklin Camacho
+  -  Anthony Cascen
