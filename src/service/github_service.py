@@ -15,22 +15,23 @@ def get_resource_from_github(folder, file, return_string=True):
     :return: string representation of a json object
     """
     response = requests.get(f"{os.environ['RAW_GITHUB_ROOT_URL'] + folder + '/' + file}")
-    if response.status_code == 200:
-        if return_string:
-            backslash = "\\"
-            val = str(response.content) \
-                .removeprefix("b'") \
-                .removesuffix("'") \
-                .replace("\\n", "") \
-                .replace("\\t", "") \
-                .replace(backslash, "")
-            return val
-        else:
-            val2 = response.content
-            return val2
-    else:
+
+    if response.status_code != 200:
         print(f"{response.status_code}: {response.content}")
         return str(response.content).removeprefix("b'").removesuffix("'")
+
+    if return_string:
+        backslash = "\\"
+        val = str(response.content) \
+            .removeprefix("b'") \
+            .removesuffix("'") \
+            .replace("\\n", "") \
+            .replace("\\t", "") \
+            .replace(backslash, "")
+        return val
+    else:
+        val2 = response.content
+        return val2
 
 
 def get_two_recourses(selection):
