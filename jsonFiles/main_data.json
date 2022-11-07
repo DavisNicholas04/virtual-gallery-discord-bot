@@ -1,7 +1,7 @@
 {
-  "history_link": "<link to history website>",
-  "anime_link": "<link to anime website>",
-  "games_link": "<link to games website>",
+  "history_link": "https://davisnicholas04.github.io/virtual-gallery-discord-bot/history.html",
+  "anime_link": "https://davisnicholas04.github.io/virtual-gallery-discord-bot/anime.html",
+  "games_link": "https://davisnicholas04.github.io/virtual-gallery-discord-bot/games.html",
   "history": [
     {
       "title": "Crossing the karman line",
