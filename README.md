@@ -31,7 +31,7 @@ coming soon.
 ## Meet the team
 
 - Project Manager
-  - Nicholas Davis
+  - Nicholas Davis ([LinkedIn](https://www.linkedin.com/in/nicholas-davis-a7935b223/))
 
 
 - Backend Development
@@ -39,5 +39,5 @@ coming soon.
 
 
 - Frontend Development
-  - Franklin Camacho
+  - Franklin Camacho ([LinkedIn](https://www.linkedin.com/in/franklin-camacho-iii-41ab5b234/))
   -  Anthony Cascen
