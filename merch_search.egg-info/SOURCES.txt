@@ -1,6 +1,0 @@
-README.md
-setup.py
-merch_search.egg-info/PKG-INFO
-merch_search.egg-info/SOURCES.txt
-merch_search.egg-info/dependency_links.txt
-merch_search.egg-info/top_level.txt
