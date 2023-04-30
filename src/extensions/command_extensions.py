@@ -1,7 +1,7 @@
 import interactions
-import src.service.component_service as cs
-import src.components.components as cpnts
-from src.utils.utils import delete
+import service.component_service as cs
+import components.components as cpnts
+from utils.utils import delete
 
 
 class Commands(interactions.Extension):

@@ -1,7 +1,7 @@
 import interactions
-from src.service.github_service import get_resource_from_github, get_two_recourses
-import src.components.components as cpnts
-from src.utils.utils import delete
+from service.github_service import get_resource_from_github, get_two_recourses
+import components.components as cpnts
+from utils.utils import delete
 
 
 class ComponentService(interactions.Extension):

@@ -1,6 +1,5 @@
 FROM python:3.10.4
-WORKDIR .
-COPY requirements.txt .
+WORKDIR /app
+COPY . .
 RUN pip install -r requirements.txt
-COPY ./src /src
-CMD python src/main.py
+CMD ["python", "./src/main.py"]
